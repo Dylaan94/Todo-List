@@ -1,0 +1,23 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "Todo list for the Odin Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dylaan94/Todo-List.git"
+  },
+  "author": "Dylaan94",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dylaan94/Todo-List/issues"
+  },
+  "homepage": "https://github.com/Dylaan94/Todo-List#readme",
+  "devDependencies": {
+    "webpack": "^5.25.1",
+    "webpack-cli": "^4.5.0"
+  }
+}
