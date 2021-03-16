@@ -1,0 +1,25 @@
+body {
+    margin: 0 auto;
+}
+
+.header {
+    width: 100%;
+    background-color: red;
+    height: 4vh;
+}
+
+.container {
+    display: flex; 
+
+}
+
+.sidebarContainer {
+    background-color: grey;
+    width: 20vw;
+    height: 96vh;
+}
+
+.mainContainer {
+    background-color: khaki;
+    width: 80vw;
+}
