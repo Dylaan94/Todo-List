@@ -1,18 +1,24 @@
-let toDoListArray = [
-]
+let toDoListArray = []
 
-// create constructor to make todolist items
+let toDoitem = (task, dueDate, description, notes, priority) => {
+    // push new todo item to array
+    toDoListArray.push({task, dueDate, description, notes, priority}) 
+    console.log(toDoListArray)
+};
 
-class toDoItem {
-    constructor () {
-        this.task;
-        this.dueDate;
-        this.description;
-        this.notes;
-        this.priority;
+// call factory function
+let newTodoItem = () => {
+    let task = document.getElementById('task').value;
+    let dueDate = document.getElementById('dueDate').value; 
+    let description = document.getElementById('description').value;
+    let notes = document.getElementById('notes').value;
+    let priority = document.getElementById('priority').value;
+    toDoitem(task, dueDate, description, notes, priority)
+}
 
-        // this.checklist; add in later version
-    }
+// render book in DOM (this should be in seperate modules maybe?)
+let renderTodoItem = () => {
+
 }
 
 // toggles form on
@@ -21,5 +27,7 @@ let toggleForm = () => {
 }
 
 export {
-    toggleForm
+    toggleForm,
+    newTodoItem,
+    toDoitem,
 }
