@@ -20,8 +20,37 @@
         </div>
         
         <div class = "mainContainer" id = "mainContainer">
+            <div class = "containerTitle" id = "containerTitle"> To Do List </div>
+            <input type = "button" class = "addTodoBtn" id = 'addTodoBtn' value = "add item">
+            <div class = "todoListContainer" id = "todoListContainer">
+                todolist container
+            </div>
             main container here
         </div>
+
+        <div class = "popupForm" id = "popupForm">
+            <div class = "overlay">
+                <div class = "content">
+                    <div class = "close-btn" id = "close-btn">close</div>
+                    <h1>Fill in your details</h1>
+                    <div class = "formInput">
+                        <label for = "task"> task name </label>
+                        <input type = "text" id = "task" name = "task">
+                        <label for = "dueDate"> due date </label>
+                        <input type = "text" id = "dueDate" name = "dueDate">
+                        <label for = "description"> description </label>
+                        <input type = "text" id = "description" name = "description">
+                        <label for = "notes"> notes </label>
+                        <input type = "text" id = "notes" name = "notes">
+                        <label for = "priority"> high priority? </label>
+                        <input type = "checkbox" id = "priority" value = "priority">
+                        <button class = "submit" id = "submit"> submit </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
     <script src = "main.js"></script>
 </body>

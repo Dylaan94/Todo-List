@@ -16,7 +16,17 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_loadToday__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/loadToday */ \"./src/modules/loadToday.js\");\n/* harmony import */ var _modules_loadWeek__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/loadWeek */ \"./src/modules/loadWeek.js\");\n/* harmony import */ var _modules_loadMonth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/loadMonth */ \"./src/modules/loadMonth.js\");\nconsole.log(\"test\")\n\n\n;\n\n\n\nlet todayTab = document.getElementById('todayTab')\nlet weekTab = document.getElementById('weekTab')\nlet monthTab = document.getElementById('monthTab')\n\ntodayTab.addEventListener('click', () => {\n    ;(0,_modules_loadToday__WEBPACK_IMPORTED_MODULE_0__.loadTodayTest)();\n})\n\nweekTab.addEventListener('click', () => {\n    ;(0,_modules_loadWeek__WEBPACK_IMPORTED_MODULE_1__.loadWeekTest)();\n})\n\nmonthTab.addEventListener('click', () => {\n    ;(0,_modules_loadMonth__WEBPACK_IMPORTED_MODULE_2__.loadMonthTest)();\n})\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_loadToday__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/loadToday */ \"./src/modules/loadToday.js\");\n/* harmony import */ var _modules_loadWeek__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/loadWeek */ \"./src/modules/loadWeek.js\");\n/* harmony import */ var _modules_loadMonth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/loadMonth */ \"./src/modules/loadMonth.js\");\n/* harmony import */ var _modules_createTodo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/createTodo */ \"./src/modules/createTodo.js\");\nconsole.log(\"test\")\n\n\n;\n\n\n\n\n\nlet todayTab = document.getElementById('todayTab')\nlet weekTab = document.getElementById('weekTab')\nlet monthTab = document.getElementById('monthTab')\n\nlet addTodoBtn = document.getElementById('addTodoBtn');\n\ntodayTab.addEventListener('click', () => {\n    (0,_modules_loadToday__WEBPACK_IMPORTED_MODULE_0__.loadTodayTest)();\n})\n\nweekTab.addEventListener('click', () => {\n    ;(0,_modules_loadWeek__WEBPACK_IMPORTED_MODULE_1__.loadWeekTest)();\n})\n\nmonthTab.addEventListener('click', () => {\n    ;(0,_modules_loadMonth__WEBPACK_IMPORTED_MODULE_2__.loadMonthTest)();\n})\n\naddTodoBtn.addEventListener('click', () => {\n    ;(0,_modules_createTodo__WEBPACK_IMPORTED_MODULE_3__.toggleForm)();\n})\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/createTodo.js":
+/*!***********************************!*\
+  !*** ./src/modules/createTodo.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"toggleForm\": () => (/* binding */ toggleForm)\n/* harmony export */ });\nlet toDoListArray = [\n]\n\n// create constructor to make todolist items\n\nclass toDoItem {\n    constructor () {\n        this.task;\n        this.dueDate;\n        this.description;\n        this.notes;\n        this.priority;\n\n        // this.checklist; add in later version\n    }\n}\n\n// toggles form on\nlet toggleForm = () => {\n    document.getElementById(\"popupForm\").classList.toggle(\"active\");\n}\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/createTodo.js?");
 
 /***/ }),
 
