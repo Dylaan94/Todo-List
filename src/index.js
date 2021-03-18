@@ -35,6 +35,7 @@ addTodoBtn.addEventListener('click', () => {
 
 submitBtn.addEventListener('click', () => {
     newTodoItem();
+   // toggleForm();
 })
 
 closeBtn.addEventListener('click', () => {

@@ -20,9 +20,6 @@ let newTodoItem = () => {
     toDoitem(task, dueDate, description, notes, priority)
 }
 
-// toggles form on need to move
-
-
 export {
     toDoListArray,
     newTodoItem,
