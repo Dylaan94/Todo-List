@@ -1,9 +1,13 @@
+import {renderToDoItem} from './render'
+
 let toDoListArray = []
 
+// factory function
 let toDoitem = (task, dueDate, description, notes, priority) => {
     // push new todo item to array
     toDoListArray.push({task, dueDate, description, notes, priority}) 
     console.log(toDoListArray)
+    renderToDoItem(toDoListArray);
 };
 
 // call factory function
@@ -16,17 +20,13 @@ let newTodoItem = () => {
     toDoitem(task, dueDate, description, notes, priority)
 }
 
-// render book in DOM (this should be in seperate modules maybe?)
-let renderTodoItem = () => {
-
-}
-
 // toggles form on
 let toggleForm = () => {
     document.getElementById("popupForm").classList.toggle("active");
 }
 
 export {
+    toDoListArray,
     toggleForm,
     newTodoItem,
     toDoitem,
