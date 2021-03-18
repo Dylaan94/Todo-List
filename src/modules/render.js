@@ -2,25 +2,26 @@
 
 let toDoListContainer = document.getElementById('toDoListContainer')
 
-let test = () => {
-    console.log('renderTest')
+let toggleForm = () => {
+    document.getElementById("popupForm").classList.toggle("active");
 }
 
 let renderToDoItem = (toDoListArray) => {
-    console.log(toDoListContainer)
-    // for loop to render each object in the array
-    // create a div for the data from the object to be stored
+    // for loop to render each object and create div
+
     for (let i = 0; i < toDoListArray.length; i ++) {
-        let div = document.createElement('div')
-        div.id = 'toDoItem' + i;
-        div.className = 'toDoItem' + i;
-        toDoListContainer.appendChild(div);
+        // check if the div has already been generated
+        if (!document.getElementById('toDoItem'+i)){
+            let div = document.createElement('div')
+            div.id = 'toDoItem' + i;
+            div.className = 'toDoItem';
+            toDoListContainer.appendChild(div);
+        }
     }
-    
     console.log(toDoListContainer)
 }
 
 export {
-    test,
+    toggleForm,
     renderToDoItem,
 }

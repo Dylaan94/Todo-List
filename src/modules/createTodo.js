@@ -20,14 +20,11 @@ let newTodoItem = () => {
     toDoitem(task, dueDate, description, notes, priority)
 }
 
-// toggles form on
-let toggleForm = () => {
-    document.getElementById("popupForm").classList.toggle("active");
-}
+// toggles form on need to move
+
 
 export {
     toDoListArray,
-    toggleForm,
     newTodoItem,
     toDoitem,
 }
