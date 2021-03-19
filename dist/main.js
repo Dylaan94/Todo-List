@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_loadToday__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/loadToday */ \"./src/modules/loadToday.js\");\n/* harmony import */ var _modules_loadWeek__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/loadWeek */ \"./src/modules/loadWeek.js\");\n/* harmony import */ var _modules_loadMonth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/loadMonth */ \"./src/modules/loadMonth.js\");\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/render */ \"./src/modules/render.js\");\n/* harmony import */ var _modules_createTodo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/createTodo */ \"./src/modules/createTodo.js\");\nconsole.log(\"test\")\n\n\n;\n\n\n\n\n\n\n\nlet todayTab = document.getElementById('todayTab')\nlet weekTab = document.getElementById('weekTab')\nlet monthTab = document.getElementById('monthTab')\n\nlet addTodoBtn = document.getElementById('addTodoBtn');\nlet submitBtn = document.getElementById('submit');\nlet closeBtn = document.getElementById('close-btn')\n\ntodayTab.addEventListener('click', () => {\n    ;(0,_modules_loadToday__WEBPACK_IMPORTED_MODULE_0__.loadTodayTest)();\n})\n\nweekTab.addEventListener('click', () => {\n    ;(0,_modules_loadWeek__WEBPACK_IMPORTED_MODULE_1__.loadWeekTest)();\n})\n\nmonthTab.addEventListener('click', () => {\n    ;(0,_modules_loadMonth__WEBPACK_IMPORTED_MODULE_2__.loadMonthTest)();\n})\n\naddTodoBtn.addEventListener('click', () => {\n    ;(0,_modules_render__WEBPACK_IMPORTED_MODULE_3__.toggleForm)();\n})\n\nsubmitBtn.addEventListener('click', () => {\n    ;(0,_modules_createTodo__WEBPACK_IMPORTED_MODULE_4__.newTodoItem)();\n   // toggleForm();\n})\n\ncloseBtn.addEventListener('click', () => {\n    ;(0,_modules_render__WEBPACK_IMPORTED_MODULE_3__.toggleForm)();\n})\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_loadTimespan__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/loadTimespan */ \"./src/modules/loadTimespan.js\");\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/render */ \"./src/modules/render.js\");\n/* harmony import */ var _modules_createTodo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/createTodo */ \"./src/modules/createTodo.js\");\n\n\n\n\n\n// tabbing variables\nlet todayTab = document.getElementById('todayTab')\nlet weekTab = document.getElementById('weekTab')\nlet monthTab = document.getElementById('monthTab')\n\n// button variables\nlet addTodoBtn = document.getElementById('addTodoBtn');\nlet submitBtn = document.getElementById('submit');\nlet closeBtn = document.getElementById('close-btn')\n\ntodayTab.addEventListener('click', () => {\n    ;(0,_modules_loadTimespan__WEBPACK_IMPORTED_MODULE_0__.loadTimespanTest)();\n})\n\nweekTab.addEventListener('click', () => {\n    ;(0,_modules_loadTimespan__WEBPACK_IMPORTED_MODULE_0__.loadTimespanTest)();\n})\n\nmonthTab.addEventListener('click', () => {\n    ;(0,_modules_loadTimespan__WEBPACK_IMPORTED_MODULE_0__.loadTimespanTest)();\n})\n\naddTodoBtn.addEventListener('click', () => {\n    ;(0,_modules_render__WEBPACK_IMPORTED_MODULE_1__.toggleForm)();\n})\n\nsubmitBtn.addEventListener('click', () => {\n    ;(0,_modules_createTodo__WEBPACK_IMPORTED_MODULE_2__.newTodoItem)();\n   // toggleForm();\n})\n\ncloseBtn.addEventListener('click', () => {\n    ;(0,_modules_render__WEBPACK_IMPORTED_MODULE_1__.toggleForm)();\n})\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
 
 /***/ }),
 
@@ -30,33 +30,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/modules/loadMonth.js":
-/*!**********************************!*\
-  !*** ./src/modules/loadMonth.js ***!
-  \**********************************/
+/***/ "./src/modules/loadTimespan.js":
+/*!*************************************!*\
+  !*** ./src/modules/loadTimespan.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadMonthTest\": () => (/* binding */ loadMonthTest)\n/* harmony export */ });\nlet loadMonthTest = () => {\n    console.log(\"loadMonth\")\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/loadMonth.js?");
-
-/***/ }),
-
-/***/ "./src/modules/loadToday.js":
-/*!**********************************!*\
-  !*** ./src/modules/loadToday.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadTodayTest\": () => (/* binding */ loadTodayTest)\n/* harmony export */ });\nlet loadTodayTest = () => {\n    console.log(\"loadToday\")\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/loadToday.js?");
-
-/***/ }),
-
-/***/ "./src/modules/loadWeek.js":
-/*!*********************************!*\
-  !*** ./src/modules/loadWeek.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadWeekTest\": () => (/* binding */ loadWeekTest)\n/* harmony export */ });\nlet loadWeekTest = () => {\n    console.log(\"loadWeek\")\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/loadWeek.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadTimespanTest\": () => (/* binding */ loadTimespanTest)\n/* harmony export */ });\nlet loadTimespanTest = () => {\n    console.log(\"test\")\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/loadTimespan.js?");
 
 /***/ }),
 
@@ -66,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"toggleForm\": () => (/* binding */ toggleForm),\n/* harmony export */   \"renderToDoItem\": () => (/* binding */ renderToDoItem)\n/* harmony export */ });\n// render todolist item\n\nlet toDoListContainer = document.getElementById('toDoListContainer')\n\n// toggles form on and off\nlet toggleForm = () => {\n    document.getElementById(\"popupForm\").classList.toggle(\"active\");\n}\n\nlet renderToDoItem = (toDoListArray) => {\n    // for loop to render each object and create div\n    for (let i = 0; i < toDoListArray.length; i ++) {\n        // check if the div has already been generated\n        if (!document.getElementById('toDoItem'+i)){\n            let div = document.createElement('div')\n            div.id = 'toDoItem' + i;\n            div.className = 'toDoItem';\n            div.innerHTML = toDoListArray[i].task + toDoListArray[i].description + \n                            toDoListArray[i].notes + toDoListArray[i].dueDate + toDoListArray[i].priority;\n            toDoListContainer.appendChild(div);\n        }\n    }\n    console.log(toDoListContainer)\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/render.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"toggleForm\": () => (/* binding */ toggleForm),\n/* harmony export */   \"renderToDoItem\": () => (/* binding */ renderToDoItem)\n/* harmony export */ });\n// render todolist item\n\nlet toDoListContainer = document.getElementById('toDoListContainer')\n\n// toggles form on and off\nlet toggleForm = () => {\n    document.getElementById(\"popupForm\").classList.toggle(\"active\");\n}\n\nlet renderToDoItem = (toDoListArray) => {\n    // for loop to render each object and create div\n    for (let i = 0; i < toDoListArray.length; i ++) {\n        // check if the div has already been generated\n        if (!document.getElementById('toDoItem'+i)){\n            let div = document.createElement('div')\n            div.id = 'toDoItem' + i;\n            div.className = 'toDoItem';\n            div.innerHTML = '<h2>' + toDoListArray[i].task + '</h2>' + \n                            '<p>' + toDoListArray[i].description + '</p>' + \n                            toDoListArray[i].notes + toDoListArray[i].dueDate + toDoListArray[i].priority;\n            toDoListContainer.appendChild(div);\n        }\n    }\n    console.log(toDoListContainer)\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/render.js?");
 
 /***/ })
 

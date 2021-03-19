@@ -30,9 +30,12 @@ body {
 /*To do div styling*/
 
 .toDoItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-color: white;
     width: 80vw;
-    height: 10vh;
+    min-height: 10vh;
     border-bottom: grey solid 0.1em;
 }
 

@@ -9,5 +9,5 @@
 <b> Things I want to add </b>
 - add ability to edit previously written todo items
 - add ability to set date with library
--
+- add collapsables to todo items
 

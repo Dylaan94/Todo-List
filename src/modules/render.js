@@ -15,7 +15,8 @@ let renderToDoItem = (toDoListArray) => {
             let div = document.createElement('div')
             div.id = 'toDoItem' + i;
             div.className = 'toDoItem';
-            div.innerHTML = toDoListArray[i].task + toDoListArray[i].description + 
+            div.innerHTML = '<h2>' + toDoListArray[i].task + '</h2>' + 
+                            '<p>' + toDoListArray[i].description + '</p>' + 
                             toDoListArray[i].notes + toDoListArray[i].dueDate + toDoListArray[i].priority;
             toDoListContainer.appendChild(div);
         }
