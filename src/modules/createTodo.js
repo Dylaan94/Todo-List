@@ -13,7 +13,7 @@ let toDoitem = (task, dueDate, description, notes, priority) => {
 // call factory function
 let newTodoItem = () => {
     let task = document.getElementById('task').value;
-    let dueDate = document.getElementById('dueDate').value; 
+    let dueDate = document.getElementById('datepicker').value; 
     let description = document.getElementById('description').value;
     let notes = document.getElementById('notes').value;
     let priority = document.getElementById('priority').value;

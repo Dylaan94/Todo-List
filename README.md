@@ -3,7 +3,7 @@
 
 <b>Things I have learnt </b>
 - How to run functions from within seperate modules
--
+- How to add datepicker from jqueryUI
 -
 
 <b> Things I want to add </b>
