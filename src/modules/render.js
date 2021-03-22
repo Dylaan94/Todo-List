@@ -1,5 +1,7 @@
 // render todolist item
 
+import { toDoitem } from "./createTodo";
+
 let toDoListContainer = document.getElementById('toDoListContainer')
 
 // toggles form on and off
@@ -11,17 +13,49 @@ let renderToDoItem = (toDoListArray) => {
     // for loop to render each object and create div
     for (let i = 0; i < toDoListArray.length; i ++) {
         // check if the div has already been generated
-        if (!document.getElementById('toDoItem'+i)){
+        if (!document.getElementById('toDoItem' + i)){
             let div = document.createElement('div')
             div.id = 'toDoItem' + i;
             div.className = 'toDoItem';
-            div.innerHTML = '<h2>' + toDoListArray[i].task + '</h2>' + 
-                            '<p>' + toDoListArray[i].description + '</p>' + 
-                            toDoListArray[i].notes + toDoListArray[i].dueDate + toDoListArray[i].priority;
             toDoListContainer.appendChild(div);
+
+            // add variable to new div
+            let toDoItem = document.getElementById('toDoItem' + i)
+
+            // dynamically create new divs for styling
+            let taskDiv = document.createElement('div');
+            taskDiv.id = 'taskDiv' + i;
+            taskDiv.className = 'taskDiv'
+            taskDiv.innerHTML = toDoListArray[i].task
+            toDoItem.appendChild(taskDiv)
+        
+            let descriptionDiv = document.createElement('div');
+            descriptionDiv.id = 'descriptionDiv' + i;
+            descriptionDiv.className = 'descriptionDiv';
+            descriptionDiv.innerHTML = toDoListArray[i].description;
+            toDoItem.appendChild(descriptionDiv)
+        
+            let dueDateDiv = document.createElement('div');
+            dueDateDiv.id = 'dueDateDiv' + i;
+            dueDateDiv.className = 'dueDateDiv';
+            dueDateDiv.innerHTML = toDoListArray[i].dueDate;
+            toDoItem.appendChild(dueDateDiv)
+        
+            let notesDiv = document.createElement('div');
+            notesDiv.id = 'notesDiv' + i;
+            notesDiv.className = 'notesDiv';
+            notesDiv.innerHTML = toDoListArray[i].notes;
+            toDoItem.appendChild(notesDiv)
+        
+            let priorityDiv = document.createElement('div');
+            priorityDiv.id = 'priorityDiv' + i;
+            priorityDiv.className = 'priorityDiv'
+            priorityDiv.innerHTML = toDoListArray[i].priority;
+            toDoItem.appendChild(priorityDiv) 
         }
     }
     console.log(toDoListContainer)
+    console.log(toDoListArray)
 }
 
 export {
