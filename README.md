@@ -4,7 +4,7 @@
 <b>Things I have learnt </b>
 - How to run functions from within seperate modules
 - How to add datepicker from jqueryUI
--
+- How to add objects to local storage
 
 <b> Things I want to add </b>
 - add ability to edit previously written todo items

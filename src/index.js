@@ -3,6 +3,10 @@ import{loadTimespanTest} from './modules/loadTimespan'
 import {toggleForm} from './modules/render';
 import {newTodoItem} from './modules/createTodo';
 
+import {renderToDoItem} from './modules/render'
+
+import {fromStorage} from './modules/storage'
+
 // tabbing variables
 let todayTab = document.getElementById('todayTab')
 let weekTab = document.getElementById('weekTab')
@@ -37,3 +41,10 @@ submitBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
     toggleForm();
 })
+
+
+// checks if there are todoitems already in storage, if so it will create divs
+if (window.localStorage.getItem('toDoItems') !== null) {
+    fromStorage();
+}
+

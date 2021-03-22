@@ -8,8 +8,8 @@ let toDoitem = (task, dueDate, description, notes, priority) => {
     // push new todo item to array
     toDoListArray.push({task, dueDate, description, notes, priority}) 
     console.log(toDoListArray)
-    renderToDoItem(toDoListArray);
     toStorage(toDoListArray);
+    renderToDoItem(toDoListArray);
 };
 
 // call factory function
