@@ -1,13 +1,11 @@
-// render todolist item
-
-import { toDoitem } from "./createTodo";
-
 let toDoListContainer = document.getElementById('toDoListContainer')
 
 // toggles form on and off
 let toggleForm = () => {
     document.getElementById("popupForm").classList.toggle("active");
 }
+
+// render ToDo list items
 
 let renderToDoItem = (toDoListArray) => {
     // for loop to render each object and create div

@@ -11,3 +11,6 @@
 - add ability to set date with library
 - add collapsables to todo items
 
+<b> Things I want to learn </b>
+- Best way to structure divs, and how many is too many
+

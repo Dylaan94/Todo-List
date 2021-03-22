@@ -1,4 +1,5 @@
 import {renderToDoItem} from './render'
+import {toStorage} from './storage'
 
 let toDoListArray = []
 
@@ -8,6 +9,7 @@ let toDoitem = (task, dueDate, description, notes, priority) => {
     toDoListArray.push({task, dueDate, description, notes, priority}) 
     console.log(toDoListArray)
     renderToDoItem(toDoListArray);
+    toStorage(toDoListArray);
 };
 
 // call factory function
