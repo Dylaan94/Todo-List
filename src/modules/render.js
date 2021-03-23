@@ -8,6 +8,7 @@ let toggleForm = () => {
 // render ToDo list items
 
 let renderToDoItem = (toDoListArray) => {
+    console.log(toDoListArray)
     // for loop to render each object and create div
     for (let i = 0; i < toDoListArray.length; i ++) {
         // check if the div has already been generated

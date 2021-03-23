@@ -1,7 +1,5 @@
 import {renderToDoItem} from './render'
-import {toStorage} from './storage'
-
-let toDoListArray = []
+import {toStorage, toDoListArray} from './storage'
 
 // factory function
 let toDoitem = (task, dueDate, description, notes, priority) => {
@@ -23,7 +21,6 @@ let newTodoItem = () => {
 }
 
 export {
-    toDoListArray,
     newTodoItem,
     toDoitem,
 }

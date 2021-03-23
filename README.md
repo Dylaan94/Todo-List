@@ -13,4 +13,5 @@
 
 <b> Things I want to learn </b>
 - Best way to structure divs, and how many is too many
+- How to keep code uncoupled
 
