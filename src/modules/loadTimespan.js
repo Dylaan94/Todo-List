@@ -1,4 +1,4 @@
-import { toDate, isToday, isThisWeek, parseISO } from 'date-fns'
+import { toDate, isToday, isThisWeek, isThisMonth, parseISO } from 'date-fns'
 import {renderToDoItem, clearNodes} from './render'
 import {toDoListArray} from './storage'
 
@@ -21,6 +21,8 @@ let loadTimespanTest = () => {
     // const date = new Date();
     // console.log(date)
 }
+
+// probably a way to remove duplicate code here
 
 let checkToday = () => {
     let toDoListToday = [];
@@ -51,7 +53,16 @@ let checkWeek = () => {
 }
 
 let checkMonth = () => {
-
+    let toDoListMonth = [];
+    console.log('checkMonthRunning')
+    for (let i = 0; i < toDoListArray.length; i++){
+        if(isThisMonth(parseISO(toDoListArray[i].dueDate)) == true) {
+            toDoListMonth.push(toDoListArray[i])
+            console.log(toDoListMonth)
+        }
+    }
+    clearNodes();
+    renderToDoItem(toDoListMonth);
 }
 
 

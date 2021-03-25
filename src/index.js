@@ -38,7 +38,8 @@ weekTab.addEventListener('click', () => {
 })
 
 monthTab.addEventListener('click', () => {
-    loadTimespanTest();
+    //loadTimespanTest();
+    checkMonth();
 })
 
 addTodoBtn.addEventListener('click', () => {
@@ -57,6 +58,7 @@ closeBtn.addEventListener('click', () => {
 clearAllBtn.addEventListener('click', () => {
     clearNodes();
     clearStorage();
+    location.reload();
 })
 
 // checks if there are todoitems already in storage, if so it will create divs
