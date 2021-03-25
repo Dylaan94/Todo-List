@@ -21,10 +21,15 @@ let fromStorage = () => {
     renderToDoItem(toDoListArray)
 }
 
+let clearStorage = () => {
+    localStorage.removeItem('toDoItems')
+}
+
 export {
     toStorage,
     fromStorage,
-    toDoListArray
+    toDoListArray,
+    clearStorage
 }
 
 // window.localStorage.removeItem('toDoItems');
