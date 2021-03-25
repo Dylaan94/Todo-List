@@ -1,5 +1,5 @@
 // timespan 
-import{loadTimespanTest, checkToday} from './modules/loadTimespan'
+import{loadTimespanTest, checkToday, checkWeek, checkMonth} from './modules/loadTimespan'
 
 // render 
 import {toggleForm, clearNodes} from './modules/render';
@@ -33,7 +33,8 @@ todayTab.addEventListener('click', () => {
 })
 
 weekTab.addEventListener('click', () => {
-    loadTimespanTest();
+    // loadTimespanTest();
+    checkWeek();
 })
 
 monthTab.addEventListener('click', () => {

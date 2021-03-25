@@ -22,7 +22,7 @@ let fromStorage = () => {
 }
 
 let clearStorage = () => {
-    localStorage.removeItem('toDoItems')
+    window.localStorage.removeItem('toDoItems')
 }
 
 export {

@@ -1,4 +1,4 @@
-import { formatDistance, getDay, subDays, toDate, isToday, parseISO } from 'date-fns'
+import { toDate, isToday, isThisWeek, parseISO } from 'date-fns'
 import {renderToDoItem, clearNodes} from './render'
 import {toDoListArray} from './storage'
 
@@ -29,9 +29,7 @@ let checkToday = () => {
         // uses parseISO so that isToday can be run
         if (isToday(parseISO(toDoListArray[i].dueDate)) == true){
             toDoListToday.push(toDoListArray[i])
-            
             console.log(toDoListToday);
-
         }
     }
         // need to remove existing divs
@@ -40,7 +38,16 @@ let checkToday = () => {
 }
 
 let checkWeek = () => {
-
+    let toDoListWeek = [];
+    console.log('checkWeekRunning')
+    for (let i = 0; i < toDoListArray.length; i++) {
+        if (isThisWeek(parseISO(toDoListArray[i].dueDate)) == true) {
+            toDoListWeek.push(toDoListArray[i])
+            console.log(toDoListWeek)
+        }
+    }
+        clearNodes();
+        renderToDoItem(toDoListWeek)
 }
 
 let checkMonth = () => {

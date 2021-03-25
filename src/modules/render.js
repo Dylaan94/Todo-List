@@ -6,7 +6,6 @@ let toggleForm = () => {
 }
 
 // render ToDo list items
-
 let renderToDoItem = (toDoListArray) => {
     console.log(toDoListArray)
     // for loop to render each object and create div
@@ -57,16 +56,13 @@ let renderToDoItem = (toDoListArray) => {
     console.log(toDoListArray)
 }
 
-
 // remove currents divs to be reset depending on tab
 // removes from last to first for performance
 let clearNodes = () => {
-    console.log(toDoListContainer.lastElementChild)
     while(toDoListContainer.lastElementChild) {
         toDoListContainer.removeChild(toDoListContainer.lastElementChild)
     }
 }
-
 
 export {
     toggleForm,
