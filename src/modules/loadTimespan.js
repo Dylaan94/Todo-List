@@ -1,6 +1,7 @@
 import { formatDistance, getDay, subDays, toDate, isToday, parseISO } from 'date-fns'
-
+import {renderToDoItem, clearNodes} from './render'
 import {toDoListArray} from './storage'
+
 
 let loadTimespanTest = () => {
     let dueDateDivTest = document.getElementById('dueDateDiv0').innerHTML
@@ -22,16 +23,20 @@ let loadTimespanTest = () => {
 }
 
 let checkToday = () => {
+    let toDoListToday = [];
     console.log('checkTodayRunning')
-    console.log(parseISO('2021-03-25')) // need to change order of date.
-    console.log(toDoListArray[0].dueDate) // replaces slashes with dashes
-    console.log(parseISO(toDoListArray[0].dueDate))
-    // returning invalid
     for (let i = 0; i < toDoListArray.length; i++) {
+        // uses parseISO so that isToday can be run
         if (isToday(parseISO(toDoListArray[i].dueDate)) == true){
-            return console.log("is today");
+            toDoListToday.push(toDoListArray[i])
+            
+            console.log(toDoListToday);
+
         }
     }
+        // need to remove existing divs
+        clearNodes();
+        renderToDoItem(toDoListToday)
 }
 
 let checkWeek = () => {
@@ -41,6 +46,8 @@ let checkWeek = () => {
 let checkMonth = () => {
 
 }
+
+
 
 
 

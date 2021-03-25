@@ -1,17 +1,17 @@
+// timespan 
+import{loadTimespanTest, checkToday} from './modules/loadTimespan'
 
+// render 
+import {toggleForm, clearNodes} from './modules/render';
 
-import{loadTimespanTest} from './modules/loadTimespan'
-
-import {toggleForm} from './modules/render';
 import {newTodoItem} from './modules/createTodo';
-
-import {renderToDoItem} from './modules/render'
 
 import {fromStorage} from './modules/storage'
 
-import {checkToday} from './modules/loadTimespan'
+
 
 // tabbing variables
+let allItemsTab = document.getElementById('allItemsTab');
 let todayTab = document.getElementById('todayTab')
 let weekTab = document.getElementById('weekTab')
 let monthTab = document.getElementById('monthTab')
@@ -20,6 +20,13 @@ let monthTab = document.getElementById('monthTab')
 let addTodoBtn = document.getElementById('addTodoBtn');
 let submitBtn = document.getElementById('submit');
 let closeBtn = document.getElementById('close-btn')
+
+// event listeners
+
+allItemsTab.addEventListener('click', () => {
+    clearNodes();
+    fromStorage();
+})
 
 todayTab.addEventListener('click', () => {
     // loadTimespanTest();

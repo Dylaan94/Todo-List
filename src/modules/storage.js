@@ -15,9 +15,6 @@ let toStorage = (toDoListArray) => {
 let fromStorage = () => {
     // uses JSON to bring array back to life (turn into objects)
     let toDoArray_deserialised = JSON.parse(window.localStorage.getItem('toDoItems'))
-
-    console.log(localStorage)
-    console.log(toDoArray_deserialised);
     
     toDoListArray = toDoArray_deserialised
     console.log(toDoListArray)
