@@ -9,6 +9,8 @@ import {renderToDoItem} from './modules/render'
 
 import {fromStorage} from './modules/storage'
 
+import {checkToday} from './modules/loadTimespan'
+
 // tabbing variables
 let todayTab = document.getElementById('todayTab')
 let weekTab = document.getElementById('weekTab')
@@ -20,7 +22,8 @@ let submitBtn = document.getElementById('submit');
 let closeBtn = document.getElementById('close-btn')
 
 todayTab.addEventListener('click', () => {
-    loadTimespanTest();
+    // loadTimespanTest();
+    checkToday();
 })
 
 weekTab.addEventListener('click', () => {
