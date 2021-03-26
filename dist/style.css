@@ -34,18 +34,25 @@ body {
     flex-direction: column;
     background-color: white;
     width: 80vw;
-    min-height: 10vh;
+    min-height: 5vh;
     border-bottom: grey solid 0.1em;
 }
 
 /* To do item styling */
 
 .taskDiv{
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
 
 }
 
 .contentDiv {
+    padding: 1em;
     display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
 

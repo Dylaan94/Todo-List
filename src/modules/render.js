@@ -103,6 +103,14 @@ let collapseRender = (expandableContent) => {
     } else {
         expandableContent.style.display = 'block'
     }
+
+    // add transition
+    if (expandableContent.style.maxHeight) {
+        expandableContent.style.maxHeight = 'none'
+    } else {
+        expandableContent.style.maxHeight = expandableContent.scrollHeight + 'px';
+    }
+
 }
 
 export {
