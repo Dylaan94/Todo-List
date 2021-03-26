@@ -40,6 +40,13 @@ body {
 
 /* To do item styling */
 
+.taskDiv{
+
+}
+
+.contentDiv {
+    display: none;
+}
 
 
 /* popup form styling */
