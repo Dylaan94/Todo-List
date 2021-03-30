@@ -32,7 +32,7 @@ let renderToDoItem = (toDoListArray) => {
             div.appendChild(collapsableDiv)
 
             let contentDiv = document.createElement('div')
-            contentDiv.id = 'contentDiv';
+            contentDiv.id = 'contentDiv' + i;
             contentDiv.className = 'contentDiv';
             contentDivArr.push(contentDiv) 
             div.appendChild(contentDiv)
@@ -73,6 +73,7 @@ let renderToDoItem = (toDoListArray) => {
 
     // add ability to expand each item
     collapsableDivArr.forEach(item => {
+        
         item.addEventListener('click', () => {
             console.log(item.nextElementSibling)
             let expandableContent = item.nextElementSibling
@@ -82,7 +83,7 @@ let renderToDoItem = (toDoListArray) => {
 
     console.log(toDoListContainer)
     console.log(toDoListArray)
-
+    console.log(collapsableDivArr)
 }
 
 // remove currents divs to be reset depending on tab
@@ -93,25 +94,31 @@ let clearNodes = () => {
     }
 }
 
+
 // checks against CSS and opens and closes
+// something is kinda broken here, if the page doesnt reload some of the values
+// get stuck: 'fixed' with location.reload();
 let collapseRender = (expandableContent) => {
     console.log('collapse render called')
     console.log(expandableContent)
 
-    if (expandableContent.style.display === 'block') {
+    console.log(expandableContent.style.display)
+    if (expandableContent.style.display == 'block') {
         expandableContent.style.display = 'none'
     } else {
         expandableContent.style.display = 'block'
     }
-
+    console.log(expandableContent.style.display)
     // add transition
+    
     if (expandableContent.style.maxHeight) {
-        expandableContent.style.maxHeight = 'none'
+        expandableContent.style.maxHeight = null;
     } else {
         expandableContent.style.maxHeight = expandableContent.scrollHeight + 'px';
     }
 
 }
+
 
 export {
     toggleForm,
@@ -119,5 +126,5 @@ export {
     clearNodes,
     collapseRender,
     collapsableDivArr,
-    contentDivArr
+    contentDivArr,
 }

@@ -1,12 +1,13 @@
 body {
     margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* main page styling*/
 
 .header {
     width: 100%;
-    background-color: red;
+    background-color: #00c0ff;
     height: 4vh;
 }
 
@@ -16,13 +17,16 @@ body {
 }
 
 .sidebarContainer {
-    background-color: grey;
+    background-color: #f2f2f2;
     width: 20vw;
     height: 96vh;
+    border-right: #d9d9d9 solid 0.1em;
+    padding: 1em;
+    list-style-type: none;
 }
 
 .mainContainer {
-    background-color: khaki;
+    background-color: white;
     width: 80vw;
 }
 
@@ -35,7 +39,7 @@ body {
     background-color: white;
     width: 80vw;
     min-height: 5vh;
-    border-bottom: grey solid 0.1em;
+    border-bottom: #d9d9d9 solid 0.1em;
 }
 
 /* To do item styling */
@@ -47,6 +51,11 @@ body {
 
 }
 
+.collapsableDiv {
+    display: flex;
+    align-items: center;
+}
+
 .contentDiv {
     padding: 1em;
     display: none;
@@ -54,6 +63,9 @@ body {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
+
+/* collapsable div styling*/
+
 
 
 /* popup form styling */
@@ -75,45 +87,136 @@ body {
     left:50%;
     transform:translate(-50%,-50%) scale(0);
     background:#fff;
-    width:50vw;
-    height:50vh;
+    width:80vw;
+    min-height:40vh;
     z-index:2;
     text-align:center;
-    padding:20px;
-    box-sizing:border-box;
     font-family:"Open Sans",sans-serif;
-    border-radius: 25px;
-    padding: 10vw;
+    border-radius: 10px;
+    padding-bottom: 1em;
 }
 
-.popupForm .content .formInput {
+
+
+.popupForm .content {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
-    font-size: 2vw;
+    font-size: 18px;
+    
+}
+
+.popupFormTitle {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: #d9d9d9 solid 1px;
+    height: 50px;
+    width: 80vw;
+    text-align: left;
 }
 
 .popupForm .content h1 {
-    font-size: 3vw;
+    font-size: 25px;
     margin-bottom: 2vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
-.popupForm .close-btn {
+/* CSS for form styling */
+
+.formInput {
+    padding-top: 1.5vh;
+    display: grid;
+    grid-column-gap: 3vw;
+    text-align: left;
+    grid-template-columns: 17vw 17vw 17vw 17vw;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "taskLabel . dueDateLabel ."
+    "task task datepicker datepicker"
+    "descriptionLabel . . ."
+    "description description . ."
+    "notesLabel . priorityLabel priority"
+    "notes notes . submit"
+}
+
+.task  {
+    grid-area: task;
+    height: 2em;
+    border: #d9d9d9 solid 1px;
+    border-radius: 3px;
+
+}
+
+.taskLabel {
+    padding-bottom: 0.5em;
+    grid-area: taskLabel;
+
+}
+
+.datepicker {
+    grid-area: datepicker;
+    border: #d9d9d9 solid 1px;
+    border-radius: 3px;
+}
+
+.dueDateLabel {
+    padding-bottom: 0.5em;
+    grid-area: dueDateLabel;
+}
+
+.description  {
+    grid-area: description;
+    height: 2em;
+    border: #d9d9d9 solid 1px;
+    border-radius: 3px;
+}
+
+.descriptionLabel {
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    grid-area: descriptionLabel;
+}
+
+.notes {
+    grid-area: notes;
+    height: 15vh;
+    border: #d9d9d9 solid 0.1em;
+    border-radius: 3px;
+}
+
+.notesLabel {
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    grid-area: notesLabel
+}
+
+.priority {
+    grid-area: priority;
+}
+
+.priorityLabel {
+    grid-area: priorityLabel
+}
+
+.submit {
+    grid-area: submit;
+    height: 4vh;
+}
+
+
+.close-btn {
     cursor:pointer;
-    position:absolute;
-    right:20px;
-    top:20px;
-    width:30px;
-    height:30px;
-    background:#222;
-    color:#fff;
-    font-size:10px;
+    color: gray;
+    font-size: 20px;
     font-weight:600;
-    line-height:30px;
-    text-align:center;
-    border-radius:50%;
+    margin-right: 1vw;
+}
+
+.close-btn:hover {
+    color: black;
 }
 
 .submit {
@@ -126,9 +229,8 @@ body {
     border-radius: 25px;
     padding-left: 1vw;
     padding-right: 1vw;
-    font-size: 3vw;
-    max-width: 30vw;
-    margin-top: 3vh;
+    font-size: 20px;
+    max-width: 10vw;
 }
 
 .popupForm.active .overlay {

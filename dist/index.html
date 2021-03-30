@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo list</title>
     <link rel = "stylesheet" href = "style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     
     <!--jquery stuff-->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -25,10 +27,19 @@
 
     <div class = "container" id = "container">
         <div class = "sidebarContainer" id = "sidebarContainer">
-            <li id = "allItemsTab">All Items</li>
-            <li id = "todayTab"> Today </li>
-            <li id = "weekTab"> Week </li>
-            <li id = "monthTab"> Month </li>
+            <div class = "timeframeDivs">
+                <li id = "allItemsTab">All Items</li>
+                <li id = "todayTab"> Today </li>
+                <li id = "weekTab"> Week </li>
+                <li id = "monthTab"> Month </li>
+            </div>
+            <div class = "projectDivs">
+                <p><h3>Projects</h2></p>
+                    <input type = "button" class = "addProjectBtn" id = "addProjectBtn" value = "add project">
+                <li id = "defaultProject"> Default</li>
+                
+            </div>
+
         </div>
         
         <div class = "mainContainer" id = "mainContainer">
@@ -41,20 +52,25 @@
         <div class = "popupForm" id = "popupForm">
             <div class = "overlay">
                 <div class = "content">
-                    <div class = "close-btn" id = "close-btn">close</div>
-                    <h1>Fill in your details</h1>
+
+                    <div class = "popupFormTitle">
+                        <div class = "popupFormTitleText">
+                            <h1>New Task</h1>
+                        </div>
+                        <div class = "close-btn" id = "close-btn">x</div>
+                    </div>
                     <div class = "formInput">
-                        <label for = "task"> task name </label>
-                        <input type = "text" id = "task" name = "task">
-                        <label for = "dueDate"> due date </label>
-                        <input type = "text" id = "datepicker" name = "dueDate">
-                        <label for = "description"> description </label>
-                        <input type = "text" id = "description" name = "description">
-                        <label for = "notes"> notes </label>
-                        <input type = "text" id = "notes" name = "notes">
-                        <label for = "priority"> high priority? </label>
-                        <input type = "checkbox" id = "priority" value = "priority">
-                        <button class = "submit" id = "submit"> submit </button>
+                        <label for = "task" class = "taskLabel"> Title: </label>
+                        <input type = "text" id = "task" class = "task" name = "task">
+                        <label for = "dueDate" class = "dueDateLabel"> Due Date: </label>
+                        <input type = "text" id = "datepicker" class = "datepicker" name = "dueDate">
+                        <label for = "description" class = "descriptionLabel"> Description: </label>
+                        <input type = "text" id = "description" class = "description" name = "description">
+                        <label for = "notes" class = "notesLabel"> Notes: </label>
+                        <input type = "text" id = "notes" class = "notes" name = "notes">
+                        <label for = "priority" class = "priorityLabel"> high priority? </label>
+                        <input type = "checkbox" id = "priority" class = "priority" value = "priority">
+                        <button class = "submit" id = "submit" class = "submit"> submit </button>
                     </div>
                 </div>
             </div>

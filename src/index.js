@@ -2,7 +2,7 @@
 import{loadTimespanTest, checkToday, checkWeek, checkMonth} from './modules/loadTimespan'
 
 // render 
-import {toggleForm, clearNodes} from './modules/render';
+import {toggleForm, clearNodes, getDivArrays, collapsableDivArr} from './modules/render';
 
 import {newTodoItem} from './modules/createTodo';
 
@@ -21,6 +21,8 @@ let submitBtn = document.getElementById('submit');
 let closeBtn = document.getElementById('close-btn')
 
 // event listeners
+
+console.log(collapsableDivArr)
 
 allItemsTab.addEventListener('click', () => {
     clearNodes();
@@ -48,6 +50,7 @@ addTodoBtn.addEventListener('click', () => {
 
 submitBtn.addEventListener('click', () => {
     newTodoItem();
+    location.reload(); 
    // toggleForm();
 })
 
