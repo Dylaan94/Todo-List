@@ -1,13 +1,11 @@
 import {projectArray} from './storage'
-
-let createProjectTest = () => {
-    console.log("createProjectRunning")
-}
+import {renderProject} from './render'
 
 // factory function
 let project = (projectTitle) => {
     projectArray.push({projectTitle})
     console.log(projectArray)
+    renderProject(projectArray)
 }
 
 let newProject = () => {
@@ -16,6 +14,5 @@ let newProject = () => {
 }
 
 export {
-    createProjectTest,
     newProject
 }

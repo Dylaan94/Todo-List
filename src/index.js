@@ -6,7 +6,7 @@ import {toggleToDoForm, toggleProjectForm, clearNodes, getDivArrays, collapsable
 
 // create modules
 import {newTodoItem} from './modules/createTodo';
-import {createProjectTest, newProject} from './modules/createProject'
+import {newProject} from './modules/createProject'
 
 //storage
 import {fromStorage,clearStorage} from './modules/storage'
@@ -35,17 +35,14 @@ allItemsTab.addEventListener('click', () => {
 })
 
 todayTab.addEventListener('click', () => {
-    // loadTimespanTest();
     checkToday();
 })
 
 weekTab.addEventListener('click', () => {
-    // loadTimespanTest();
     checkWeek();
 })
 
 monthTab.addEventListener('click', () => {
-    //loadTimespanTest();
     checkMonth();
 })
 
@@ -55,14 +52,12 @@ addTodoBtn.addEventListener('click', () => {
 })
 
 addProjectBtn.addEventListener('click', () => {
-    createProjectTest();
     toggleProjectForm();
 })
 
 submitBtn.addEventListener('click', () => {
     newTodoItem();
     location.reload(); 
-   // toggleForm();
 })
 
 projectSubmitBtn.addEventListener('click', () => {

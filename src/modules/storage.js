@@ -2,7 +2,9 @@ import { newTodoItem, toDoitem, } from "./createTodo"
 import { renderToDoItem } from "./render"
 
 let toDoListArray = [];
-let projectArray = [];
+let projectArray = [{
+    projectTitle: 'Default'
+}];
 
 // stores the array as a string, updated each time toDoItem is called
 let toStorage = (toDoListArray) => {

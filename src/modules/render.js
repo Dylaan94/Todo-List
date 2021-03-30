@@ -1,7 +1,8 @@
 import { toDoitem } from "./createTodo";
-import { toDoListArray } from "./storage";
+import { projectArray, toDoListArray } from "./storage";
 
 let toDoListContainer = document.getElementById('toDoListContainer')
+let projectDivContainer = document.getElementById('projectDivContainer')
 let collapsableDivArr = []
 let contentDivArr = []
 
@@ -16,7 +17,6 @@ let toggleProjectForm = () => {
 
 // render ToDo list items
 let renderToDoItem = (toDoListArray) => {
-
     console.log(toDoListArray)
     // for loop to render each object and create div
     for (let i = 0; i < toDoListArray.length; i ++) {
@@ -28,7 +28,6 @@ let renderToDoItem = (toDoListArray) => {
             toDoListContainer.appendChild(div);
 
             // separate collapsableDiv and contentDiv
-
             let collapsableDiv = document.createElement('div');
             collapsableDiv.id = 'collapsableDiv'
             collapsableDiv.className = 'collapsableDiv';
@@ -77,7 +76,6 @@ let renderToDoItem = (toDoListArray) => {
 
     // add ability to expand each item
     collapsableDivArr.forEach(item => {
-        
         item.addEventListener('click', () => {
             console.log(item.nextElementSibling)
             let expandableContent = item.nextElementSibling
@@ -114,19 +112,30 @@ let collapseRender = (expandableContent) => {
     }
     console.log(expandableContent.style.display)
     // add transition
-    
     if (expandableContent.style.maxHeight) {
         expandableContent.style.maxHeight = null;
     } else {
         expandableContent.style.maxHeight = expandableContent.scrollHeight + 'px';
     }
+}
 
+let renderProject = (projectArray) => {
+    for (let i = 0; i < projectArray.length; i++) {
+        if (!document.getElementById('projectDiv' + i)){
+            let div = document.createElement('div');
+            div.id = 'projectDiv' + i;
+            div.className = 'projectDiv'
+            div.innerHTML = projectArray[i].projectTitle
+            projectDivContainer.appendChild(div);
+        }
+    }
 }
 
 export {
     toggleToDoForm,
     toggleProjectForm,
     renderToDoItem,
+    renderProject,
     clearNodes,
     collapseRender,
     collapsableDivArr,
