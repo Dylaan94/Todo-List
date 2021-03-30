@@ -96,8 +96,6 @@ body {
     padding-bottom: 1em;
 }
 
-
-
 .popupForm .content {
     display: flex;
     align-items: center;
@@ -251,4 +249,59 @@ body {
     color: #222;
     background: #fff;
     margin-top: 20px;
+}
+
+/* project form styling */ 
+
+.projectPopupForm .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.7);
+    z-index:1;
+    display:none;
+}
+
+.projectPopupForm .projectFormContent {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:#fff;
+    width:80vw;
+    min-height:40vh;
+    z-index:2;
+    text-align:center;
+    font-family:"Open Sans",sans-serif;
+    border-radius: 10px;
+    padding-bottom: 1em;
+}
+
+.projectTitleLabel {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: #d9d9d9 solid 1px;
+    height: 50px;
+    width: 80vw;
+    text-align: left;
+}
+
+.projectPopupForm .projectFormContent h1 {
+    font-size: 25px;
+    margin-bottom: 2vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.projectPopupForm.active .overlay {
+    display: block;
+}
+
+.projectPopupForm.active .projectFormContent {
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
 }

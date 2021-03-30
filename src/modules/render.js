@@ -6,8 +6,12 @@ let collapsableDivArr = []
 let contentDivArr = []
 
 // toggles form on and off
-let toggleForm = () => {
+let toggleToDoForm = () => {
     document.getElementById("popupForm").classList.toggle("active");
+}
+
+let toggleProjectForm = () => {
+    document.getElementById('projectPopupForm').classList.toggle("active")
 }
 
 // render ToDo list items
@@ -119,9 +123,9 @@ let collapseRender = (expandableContent) => {
 
 }
 
-
 export {
-    toggleForm,
+    toggleToDoForm,
+    toggleProjectForm,
     renderToDoItem,
     clearNodes,
     collapseRender,

@@ -2,10 +2,13 @@
 import{loadTimespanTest, checkToday, checkWeek, checkMonth} from './modules/loadTimespan'
 
 // render 
-import {toggleForm, clearNodes, getDivArrays, collapsableDivArr} from './modules/render';
+import {toggleToDoForm, toggleProjectForm, clearNodes, getDivArrays, collapsableDivArr} from './modules/render';
 
+// create modules
 import {newTodoItem} from './modules/createTodo';
+import {createProjectTest, newProject} from './modules/createProject'
 
+//storage
 import {fromStorage,clearStorage} from './modules/storage'
 
 // tabbing variables
@@ -16,8 +19,10 @@ let monthTab = document.getElementById('monthTab')
 
 // button variables
 let addTodoBtn = document.getElementById('addTodoBtn');
+let addProjectBtn = document.getElementById('addProjectBtn')
 let clearAllBtn = document.getElementById('clearAllBtn')
 let submitBtn = document.getElementById('submit');
+let projectSubmitBtn = document.getElementById('projectSubmit')
 let closeBtn = document.getElementById('close-btn')
 
 // event listeners
@@ -44,8 +49,14 @@ monthTab.addEventListener('click', () => {
     checkMonth();
 })
 
+
 addTodoBtn.addEventListener('click', () => {
-    toggleForm();
+    toggleToDoForm();
+})
+
+addProjectBtn.addEventListener('click', () => {
+    createProjectTest();
+    toggleProjectForm();
 })
 
 submitBtn.addEventListener('click', () => {
@@ -54,8 +65,13 @@ submitBtn.addEventListener('click', () => {
    // toggleForm();
 })
 
+projectSubmitBtn.addEventListener('click', () => {
+    newProject();
+    toggleProjectForm();
+})
+
 closeBtn.addEventListener('click', () => {
-    toggleForm();
+    toggleToDoForm();
 })
 
 clearAllBtn.addEventListener('click', () => {
