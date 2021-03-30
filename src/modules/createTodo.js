@@ -1,12 +1,12 @@
 import {renderToDoItem} from './render'
-import {toStorage, toDoListArray} from './storage'
+import {toStorage_todo, toDoListArray} from './storage'
 
 // factory function
 let toDoitem = (task, dueDate, description, notes, priority) => {
     // push new todo item to array
     toDoListArray.push({task, dueDate, description, notes, priority}) 
     console.log(toDoListArray)
-    toStorage(toDoListArray);
+    toStorage_todo(toDoListArray);
     renderToDoItem(toDoListArray);
 };
 

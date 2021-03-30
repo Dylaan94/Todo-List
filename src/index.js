@@ -9,7 +9,7 @@ import {newTodoItem} from './modules/createTodo';
 import {newProject} from './modules/createProject'
 
 //storage
-import {fromStorage,clearStorage} from './modules/storage'
+import {fromStorage_todo, fromStorage_project, clearStorage} from './modules/storage'
 
 // tabbing variables
 let allItemsTab = document.getElementById('allItemsTab');
@@ -26,12 +26,11 @@ let projectSubmitBtn = document.getElementById('projectSubmit')
 let closeBtn = document.getElementById('close-btn')
 
 // event listeners
-
 console.log(collapsableDivArr)
 
 allItemsTab.addEventListener('click', () => {
     clearNodes();
-    fromStorage();
+    fromStorage_todo();
 })
 
 todayTab.addEventListener('click', () => {
@@ -45,7 +44,6 @@ weekTab.addEventListener('click', () => {
 monthTab.addEventListener('click', () => {
     checkMonth();
 })
-
 
 addTodoBtn.addEventListener('click', () => {
     toggleToDoForm();
@@ -77,6 +75,8 @@ clearAllBtn.addEventListener('click', () => {
 
 // checks if there are todoitems already in storage, if so it will create divs
 if (window.localStorage.getItem('toDoItems') !== null) {
-    fromStorage();
+    fromStorage_todo();
 }
-
+if (window.localStorage.getItem('projectItems') !== null){
+    fromStorage_project();
+}
