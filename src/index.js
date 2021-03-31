@@ -1,5 +1,5 @@
-// timespan 
-import{checkToday, checkWeek, checkMonth} from './modules/loadTimespan'
+// sorting 
+import{checkToday, checkWeek, checkMonth} from './modules/sortByTime'
 
 // render 
 import {toggleToDoForm, toggleProjectForm, clearNodes, toggleProjectDropdown} from './modules/render';
@@ -76,6 +76,7 @@ clearAllBtn.addEventListener('click', () => {
     clearStorage();
     location.reload();
 })
+
 
 // checks if there are todoitems already in storage, if so it will create divs
 if (window.localStorage.getItem('toDoItems') !== null) {

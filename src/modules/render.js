@@ -1,3 +1,5 @@
+import {sortByProject} from './sortByProject'
+
 let toDoListContainer = document.getElementById('toDoListContainer')
 let projectDivContainer = document.getElementById('projectDivContainer')
 let projectDropDivs = document.getElementById('projectDropDivs')
@@ -118,15 +120,26 @@ let collapseRender = (expandableContent) => {
 }
 
 let renderProject = (projectArray) => {
+    let projectDivContArr = [];
     for (let i = 0; i < projectArray.length; i++) {
         if (!document.getElementById('projectDiv' + i)){
             let div = document.createElement('div');
             div.id = 'projectDiv' + i;
             div.className = 'projectDiv'
             div.innerHTML = projectArray[i].projectTitle
+            projectDivContArr.push(div);
             projectDivContainer.appendChild(div);
         }
     }
+
+    // add event listeners for sorting
+    projectDivContArr.forEach(item => {
+        item.addEventListener('click', () => {
+            let projectTitle = item.innerHTML
+            sortByProject(projectTitle)
+        })
+    })
+
 }
 
 let renderProjectDrop = (projectArray) => {
