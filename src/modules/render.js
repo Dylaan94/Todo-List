@@ -1,4 +1,5 @@
 import {sortByProject} from './sortByProject'
+import {editTodoItem, rePopulateForm} from './createTodo'
 
 let toDoListContainer = document.getElementById('toDoListContainer')
 let projectDivContainer = document.getElementById('projectDivContainer')
@@ -12,12 +13,27 @@ let toggleToDoForm = () => {
     document.getElementById("popupForm").classList.toggle("active");
 }
 
+let toggleToDoForm_edit = (index) => {
+    document.getElementById('edit').id = index;
+    document.getElementById("popupForm").classList.toggle("active");
+
+
+}
+
 let toggleProjectForm = () => {
     document.getElementById('projectPopupForm').classList.toggle("active")
 }
 
 // render ToDo list items
 let renderToDoItem = (toDoListArray) => {
+    // reset arrays so they don't keep filling up
+    collapsableDivArr = [];
+    contentDivArr = [];
+
+    // arrays for event listeners
+    let editTodoBtnArr = [];
+    let deleteTodoBtnArr = [];
+
     console.log(toDoListArray)
     // for loop to render each object and create div
     for (let i = 0; i < toDoListArray.length; i ++) {
@@ -42,6 +58,7 @@ let renderToDoItem = (toDoListArray) => {
             div.appendChild(contentDiv)
 
             // dynamically create new divs for styling
+            // add to title collapsable div
             let dueDateDiv = document.createElement('div');
             dueDateDiv.id = 'dueDateDiv' + i;
             dueDateDiv.className = 'dueDateDiv';
@@ -66,12 +83,33 @@ let renderToDoItem = (toDoListArray) => {
             notesDiv.className = 'notesDiv';
             notesDiv.innerHTML = toDoListArray[i].notes;
             contentDiv.appendChild(notesDiv)
+
+            let projectDivText = document.createElement('div');
+            projectDivText.id = 'projectDivText' + i;
+            projectDivText.className = 'projectDivText'
+            projectDivText.innerHTML = toDoListArray[i].project
+            contentDiv.appendChild(projectDivText)
         
             let priorityDiv = document.createElement('div');
             priorityDiv.id = 'priorityDiv' + i;
             priorityDiv.className = 'priorityDiv'
             priorityDiv.innerHTML = toDoListArray[i].priority;
             contentDiv.appendChild(priorityDiv) 
+
+            // add edit and delete buttons
+            let editTodoBtn = document.createElement('button')
+            editTodoBtn.id = 'editTodoBtn' + i;
+            editTodoBtn.className = 'editTodoBtn';
+            editTodoBtn.innerHTML = 'edit'
+            editTodoBtnArr.push(editTodoBtn);
+            contentDiv.appendChild(editTodoBtn);
+
+            let deleteTodoBtn = document.createElement('button')
+            deleteTodoBtn.id = 'deleteTodoBtn' + i;
+            deleteTodoBtn.className = 'deleteTodoBtn';
+            deleteTodoBtn.innerHTML = 'delete'
+            deleteTodoBtnArr.push(deleteTodoBtn)
+            contentDiv.appendChild(deleteTodoBtn)
         }
     }
 
@@ -84,10 +122,22 @@ let renderToDoItem = (toDoListArray) => {
         })
     })
 
+    // add event listeners to edit buttons
+    editTodoBtnArr.forEach(item => {
+        item.addEventListener('click', () => {
+            console.log(item.id)
+            let index = item.id.slice(-1); // gets array index from id
+            console.log(index)
+            rePopulateForm(index);
+            toggleToDoForm_edit(index);
+        })
+    })
+
     console.log(toDoListContainer)
     console.log(toDoListArray)
-    console.log(collapsableDivArr)
+    console.log(collapsableDivArr) 
 }
+
 
 // remove currents divs to be reset depending on tab
 // removes from last to first for performance
@@ -145,6 +195,7 @@ let renderProject = (projectArray) => {
 let renderProjectDrop = (projectArray) => {
     let projectDropBtn = document.getElementById('projectDropBtn')
     let projectDropArr = []
+    
     for (let i = 0; i < projectArray.length; i++) {
         let li = document.createElement('li');
         li.id = "projectDropItem" + i;

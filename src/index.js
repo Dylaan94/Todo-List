@@ -5,7 +5,7 @@ import{checkToday, checkWeek, checkMonth} from './modules/sortByTime'
 import {toggleToDoForm, toggleProjectForm, clearNodes, toggleProjectDropdown} from './modules/render';
 
 // create modules
-import {newTodoItem} from './modules/createTodo';
+import {newTodoItem, editTodoItem} from './modules/createTodo';
 import {newProject} from './modules/createProject'
 
 //storage
@@ -22,6 +22,7 @@ let addTodoBtn = document.getElementById('addTodoBtn');
 let addProjectBtn = document.getElementById('addProjectBtn')
 let clearAllBtn = document.getElementById('clearAllBtn')
 let submitBtn = document.getElementById('submit');
+let editBtn = document.getElementById('edit');
 let projectSubmitBtn = document.getElementById('projectSubmit')
 let closeBtn = document.getElementById('close-btn')
 let projectDropBtn = document.getElementById('projectDropBtn')
@@ -62,13 +63,20 @@ submitBtn.addEventListener('click', () => {
     location.reload(); 
 })
 
+editBtn.addEventListener('click', () => {
+    console.log(editBtn.id)
+    let index = editBtn.id;
+    editTodoItem(index);
+    location.reload();
+})
+
 projectSubmitBtn.addEventListener('click', () => {
     newProject();
     location.reload();
 })
 
 closeBtn.addEventListener('click', () => {
-    toggleToDoForm();
+    location.reload();
 })
 
 clearAllBtn.addEventListener('click', () => {

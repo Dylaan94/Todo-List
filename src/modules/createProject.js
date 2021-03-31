@@ -6,7 +6,6 @@ let project = (projectTitle) => {
     projectArray.push({projectTitle})
     console.log(projectArray)
     toStorage_project(projectArray)
-    renderProject(projectArray)
 }
 
 // set project values based on form

@@ -12,6 +12,7 @@
 - add ability to set date with library
 - add collapsables to todo items
 - order items based on dates
+- Add colour change with project
 
 <b> Things I want to learn </b>
 - Best way to structure divs, and how many is too many

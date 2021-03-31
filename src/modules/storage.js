@@ -31,9 +31,10 @@ let fromStorage_todo = () => {
 let fromStorage_project = () => {
     // parse from string
     let projectArray_serialised = JSON.parse(window.localStorage.getItem('projectItems'))
-    projectArray = projectArray_serialised
-    renderProjectDrop(projectArray) // renders project dropdown on popup form
+    projectArray = projectArray_serialised;
     renderProject(projectArray) // renders projects in the DOM
+    renderProjectDrop(projectArray) // renders project dropdown on popup form
+
 }
 
 let loadDefaultProject = () => {

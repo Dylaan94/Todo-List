@@ -138,7 +138,7 @@ body {
     "description description projectDropBtn projectDropBtn"
     "notesLabel . projectDropContainer projectDropContainer"
     "notes notes . ."
-    "priorityLabel priority . submit "
+    "priorityLabel priority edit submit "
 }
 
 .task  {
@@ -205,6 +205,12 @@ body {
     height: 4vh;
 }
 
+.edit {
+    grid-area: edit;
+    height: 4vh;
+    
+}
+
 .projectLabel {
     grid-area: projectLabel;
 }
@@ -244,7 +250,7 @@ body {
     color: black;
 }
 
-.submit {
+.submit .edit {
     display: flex;
     flex-direction: column;
     justify-content: center;
