@@ -1,8 +1,7 @@
-import { toDoitem } from "./createTodo";
-import { projectArray, toDoListArray } from "./storage";
-
 let toDoListContainer = document.getElementById('toDoListContainer')
 let projectDivContainer = document.getElementById('projectDivContainer')
+let projectDropDivs = document.getElementById('projectDropDivs')
+
 let collapsableDivArr = []
 let contentDivArr = []
 
@@ -13,6 +12,22 @@ let toggleToDoForm = () => {
 
 let toggleProjectForm = () => {
     document.getElementById('projectPopupForm').classList.toggle("active")
+}
+
+let toggleProjectDropdown = () => {
+    let projectDropDivs = document.getElementById('projectDropDivs')
+    if (projectDropDivs.style.display == 'block') {
+        projectDropDivs.style.display = 'none'
+    } else {
+        projectDropDivs.style.display = 'block'
+    }
+    console.log(projectDropDivs.style.display)
+    // add transition
+    if (projectDropDivs.style.maxHeight) {
+        projectDropDivs.style.maxHeight = null;
+    } else {
+        projectDropDivs.style.maxHeight = projectDropDivs.scrollHeight + 'px';
+    }
 }
 
 // render ToDo list items
@@ -96,7 +111,6 @@ let clearNodes = () => {
     }
 }
 
-
 // checks against CSS and opens and closes
 // something is kinda broken here, if the page doesnt reload some of the values
 // get stuck: 'fixed' with location.reload();
@@ -131,13 +145,25 @@ let renderProject = (projectArray) => {
     }
 }
 
+let renderProjectDrop = (projectArray) => {
+    for (let i = 0; i < projectArray.length; i++) {
+        let li = document.createElement('li');
+        li.id = "projectDropItem" + i;
+        li.class = "projectDropItem";
+        li.innerHTML = projectArray[i].projectTitle;
+        projectDropDivs.appendChild(li);
+    }
+}
+
 export {
     toggleToDoForm,
     toggleProjectForm,
     renderToDoItem,
     renderProject,
+    renderProjectDrop,
     clearNodes,
     collapseRender,
     collapsableDivArr,
     contentDivArr,
+    toggleProjectDropdown,
 }

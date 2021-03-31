@@ -9,6 +9,7 @@ let project = (projectTitle) => {
     renderProject(projectArray)
 }
 
+// set project values based on form
 let newProject = () => {
     let projectTitle = document.getElementById('projectTitleText').value;
     project(projectTitle)

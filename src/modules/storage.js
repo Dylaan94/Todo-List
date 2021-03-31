@@ -1,5 +1,4 @@
-import { newTodoItem, toDoitem, } from "./createTodo"
-import { renderToDoItem, renderProject } from "./render"
+import { renderToDoItem, renderProject, renderProjectDrop } from "./render"
 
 let toDoListArray = [];
 let projectArray = [{
@@ -15,6 +14,7 @@ let toStorage_todo = (toDoListArray) => {
 }
 
 let toStorage_project = (projectArray) => {
+    // store as string
     let projectArray_serialised = JSON.stringify(projectArray)
     window.localStorage.setItem('projectItems', projectArray_serialised)
 }
@@ -23,16 +23,22 @@ let toStorage_project = (projectArray) => {
 let fromStorage_todo = () => {
     // uses JSON to bring array back to life (turn into objects)
     let toDoArray_deserialised = JSON.parse(window.localStorage.getItem('toDoItems'))
-    
     toDoListArray = toDoArray_deserialised
     console.log(toDoListArray)
     renderToDoItem(toDoListArray)
 }
 
 let fromStorage_project = () => {
+    // parse from string
     let projectArray_serialised = JSON.parse(window.localStorage.getItem('projectItems'))
     projectArray = projectArray_serialised
-    renderProject(projectArray)
+    renderProjectDrop(projectArray) // renders project dropdown on popup form
+    renderProject(projectArray) // renders projects in the DOM
+}
+
+let loadDefaultProject = () => {
+    toStorage_project(projectArray)
+    fromStorage_project();
 }
 
 let clearStorage = () => {
@@ -47,7 +53,8 @@ export {
     fromStorage_project,
     toDoListArray,
     projectArray,
-    clearStorage
+    clearStorage,
+    loadDefaultProject
 }
 
 // window.localStorage.removeItem('toDoItems');

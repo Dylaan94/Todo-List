@@ -134,10 +134,11 @@ body {
     grid-template-areas: 
     "taskLabel . dueDateLabel ."
     "task task datepicker datepicker"
-    "descriptionLabel . . ."
-    "description description . ."
-    "notesLabel . priorityLabel priority"
-    "notes notes . submit"
+    "descriptionLabel . projectLabel ."
+    "description description projectDropBtn projectDropBtn"
+    "notesLabel . projectDropContainer projectDropContainer"
+    "notes notes . ."
+    "priorityLabel priority . submit "
 }
 
 .task  {
@@ -204,6 +205,32 @@ body {
     height: 4vh;
 }
 
+.projectLabel {
+    grid-area: projectLabel;
+}
+
+.projectDropBtn {
+    grid-area: projectDropBtn;
+    cursor: pointer;
+}
+
+.projectDropContainer {
+    grid-area: projectDropContainer;
+    position: relative;
+    display: inline-block;
+}
+
+.projectDropDivs {
+    grid-area: projectDropDivs;
+    display: none;
+    position: absolute;
+    z-index: 1;
+
+}
+
+.projectDropItem{
+
+}
 
 .close-btn {
     cursor:pointer;
