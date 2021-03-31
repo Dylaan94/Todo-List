@@ -8,7 +8,7 @@ import {toggleToDoForm, toggleProjectForm, clearNodes, toggleProjectDropdown} fr
 import {newTodoItem, editTodoItem} from './modules/createTodo';
 import {newProject} from './modules/createProject'
 
-//storage
+// storage
 import {fromStorage_todo, fromStorage_project, clearStorage, loadDefaultProject} from './modules/storage'
 
 // tabbing variables
@@ -28,7 +28,6 @@ let closeBtn = document.getElementById('close-btn')
 let projectDropBtn = document.getElementById('projectDropBtn')
 
 // event listeners
-
 allItemsTab.addEventListener('click', () => {
     clearNodes();
     fromStorage_todo();
@@ -85,7 +84,6 @@ clearAllBtn.addEventListener('click', () => {
     location.reload();
 })
 
-
 // checks if there are todoitems already in storage, if so it will create divs
 if (window.localStorage.getItem('toDoItems') !== null) {
     fromStorage_todo();
@@ -97,5 +95,3 @@ if (window.localStorage.getItem('projectItems') == null) {
 } else {
     fromStorage_project();
 }
-
-

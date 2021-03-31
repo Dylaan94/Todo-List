@@ -37,11 +37,13 @@ let fromStorage_project = () => {
 
 }
 
+// loads default project even if nothing in storage
 let loadDefaultProject = () => {
     toStorage_project(projectArray)
     fromStorage_project();
 }
 
+// clears all items
 let clearStorage = () => {
     window.localStorage.removeItem('toDoItems')
     window.localStorage.removeItem('projectItems')
@@ -57,5 +59,3 @@ export {
     clearStorage,
     loadDefaultProject
 }
-
-// window.localStorage.removeItem('toDoItems');

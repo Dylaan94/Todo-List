@@ -208,7 +208,7 @@ body {
 .edit {
     grid-area: edit;
     height: 4vh;
-    
+    display: none;
 }
 
 .projectLabel {

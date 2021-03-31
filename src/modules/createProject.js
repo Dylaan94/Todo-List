@@ -1,5 +1,4 @@
 import {projectArray,toStorage_project} from './storage'
-import {renderProject} from './render'
 
 // factory function
 let project = (projectTitle) => {

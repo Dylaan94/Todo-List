@@ -14,10 +14,14 @@ let toggleToDoForm = () => {
 }
 
 let toggleToDoForm_edit = (index) => {
-    document.getElementById('edit').id = index;
+    let editBtn = document.getElementById('edit')
+    let submitBtn = document.getElementById('submit')
+    // set id to allow array to be edited
+    editBtn.id = index;
+    // show edit button and hide submit button
+    editBtn.style.display = 'block'
+    submitBtn.style.display = 'none'
     document.getElementById("popupForm").classList.toggle("active");
-
-
 }
 
 let toggleProjectForm = () => {
@@ -132,12 +136,10 @@ let renderToDoItem = (toDoListArray) => {
             toggleToDoForm_edit(index);
         })
     })
-
     console.log(toDoListContainer)
     console.log(toDoListArray)
     console.log(collapsableDivArr) 
 }
-
 
 // remove currents divs to be reset depending on tab
 // removes from last to first for performance
@@ -151,16 +153,11 @@ let clearNodes = () => {
 // something is kinda broken here, if the page doesnt reload some of the values
 // get stuck: 'fixed' with location.reload();
 let collapseRender = (expandableContent) => {
-    console.log('collapse render called')
-    console.log(expandableContent)
-
-    console.log(expandableContent.style.display)
     if (expandableContent.style.display == 'block') {
         expandableContent.style.display = 'none'
     } else {
         expandableContent.style.display = 'block'
     }
-    console.log(expandableContent.style.display)
     // add transition
     if (expandableContent.style.maxHeight) {
         expandableContent.style.maxHeight = null;
@@ -181,8 +178,8 @@ let renderProject = (projectArray) => {
             projectDivContainer.appendChild(div);
         }
     }
-
     // add event listeners for sorting
+    // sets projectTitle and runs sortByProject
     projectDivContArr.forEach(item => {
         item.addEventListener('click', () => {
             let projectTitle = item.innerHTML
@@ -222,7 +219,6 @@ let toggleProjectDropdown = () => {
     } else {
         projectDropDivs.style.display = 'block'
     }
-    console.log(projectDropDivs.style.display)
     // add transition
     if (projectDropDivs.style.maxHeight) {
         projectDropDivs.style.maxHeight = null;

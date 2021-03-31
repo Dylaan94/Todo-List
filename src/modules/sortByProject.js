@@ -1,10 +1,7 @@
 import {renderToDoItem, clearNodes} from './render'
 import {toDoListArray} from './storage'
 
-let sortByProjectTest = () => {
-    console.log('project clicked')
-}
-
+// checks project title against array and creates new array to be rendered
 let sortByProject = (projectTitle) => {
     console.log(projectTitle);
     let sortedArr = [];
@@ -13,16 +10,11 @@ let sortByProject = (projectTitle) => {
             sortedArr.push(toDoListArray[i]) 
         }
     }
-
     console.log(sortedArr)
     clearNodes();
     renderToDoItem(sortedArr);
-
-    // sorts based on project property
-    
 }
 
 export {
-    sortByProjectTest,
     sortByProject
 }
