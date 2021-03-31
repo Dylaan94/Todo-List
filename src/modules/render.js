@@ -14,22 +14,6 @@ let toggleProjectForm = () => {
     document.getElementById('projectPopupForm').classList.toggle("active")
 }
 
-let toggleProjectDropdown = () => {
-    let projectDropDivs = document.getElementById('projectDropDivs')
-    if (projectDropDivs.style.display == 'block') {
-        projectDropDivs.style.display = 'none'
-    } else {
-        projectDropDivs.style.display = 'block'
-    }
-    console.log(projectDropDivs.style.display)
-    // add transition
-    if (projectDropDivs.style.maxHeight) {
-        projectDropDivs.style.maxHeight = null;
-    } else {
-        projectDropDivs.style.maxHeight = projectDropDivs.scrollHeight + 'px';
-    }
-}
-
 // render ToDo list items
 let renderToDoItem = (toDoListArray) => {
     console.log(toDoListArray)
@@ -146,12 +130,40 @@ let renderProject = (projectArray) => {
 }
 
 let renderProjectDrop = (projectArray) => {
+    let projectDropBtn = document.getElementById('projectDropBtn')
+    let projectDropArr = []
     for (let i = 0; i < projectArray.length; i++) {
         let li = document.createElement('li');
         li.id = "projectDropItem" + i;
         li.class = "projectDropItem";
         li.innerHTML = projectArray[i].projectTitle;
+        projectDropArr.push(li);
         projectDropDivs.appendChild(li);
+    }
+
+    // sets the buttons value based on click and closes dropdown
+    projectDropArr.forEach(item => {
+        item.addEventListener('click', () => {
+            console.log('project clicked')
+            projectDropBtn.innerHTML = item.innerHTML;
+            toggleProjectDropdown();
+        })
+    })
+}
+
+let toggleProjectDropdown = () => {
+    let projectDropDivs = document.getElementById('projectDropDivs')
+    if (projectDropDivs.style.display == 'block') {
+        projectDropDivs.style.display = 'none'
+    } else {
+        projectDropDivs.style.display = 'block'
+    }
+    console.log(projectDropDivs.style.display)
+    // add transition
+    if (projectDropDivs.style.maxHeight) {
+        projectDropDivs.style.maxHeight = null;
+    } else {
+        projectDropDivs.style.maxHeight = projectDropDivs.scrollHeight + 'px';
     }
 }
 
