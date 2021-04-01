@@ -6,7 +6,7 @@
     <title>Todo list</title>
     <link rel = "stylesheet" href = "style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     
     <!--jquery stuff-->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -21,13 +21,15 @@
 </head>
 <body> 
     <div class = "header">
-        <div class = "headerTitle"> Header </div>
-        <div class = "headerTabs"> tab tab tab</div>
+        <div class = "headerTitle"> yarukoto list </div>
+        <input type = "button" class = "addTodoBtn" id = 'addTodoBtn' value = "add item">
+        <input type = "button" class = "addProjectBtn" id = "addProjectBtn" value = "add project">
     </div>
 
     <div class = "container" id = "container">
         <div class = "sidebarContainer" id = "sidebarContainer">
             <div class = "timeframeDivs">
+                <p><h2>Projects</h2></p>
                 <li id = "allItemsTab">All Items</li>
                 <li id = "todayTab"> Today </li>
                 <li id = "weekTab"> Week </li>
@@ -43,7 +45,7 @@
         
         <div class = "mainContainer" id = "mainContainer">
             <div class = "containerTitle" id = "containerTitle"> To Do List </div>
-            <input type = "button" class = "addTodoBtn" id = 'addTodoBtn' value = "add item">
+
             <div class = "toDoListContainer" id = "toDoListContainer"></div>
             <input type = "button" class = "clearAllBtn" id = "clearAllBtn" value = "clear all items">
         </div>

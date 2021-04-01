@@ -107,14 +107,14 @@ let renderToDoItem = (toDoListArray) => {
             editTodoBtn.className = 'editTodoBtn';
             editTodoBtn.innerHTML = 'edit'
             editTodoBtnArr.push(editTodoBtn);
-            contentDiv.appendChild(editTodoBtn);
+            collapsableDiv.appendChild(editTodoBtn);
 
             let deleteTodoBtn = document.createElement('button')
             deleteTodoBtn.id = 'deleteTodoBtn' + i;
             deleteTodoBtn.className = 'deleteTodoBtn';
             deleteTodoBtn.innerHTML = 'delete'
             deleteTodoBtnArr.push(deleteTodoBtn)
-            contentDiv.appendChild(deleteTodoBtn)
+            collapsableDiv.appendChild(deleteTodoBtn)
         }
     }
 

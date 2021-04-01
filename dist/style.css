@@ -1,27 +1,96 @@
+* {
+    font-family: 'Work Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
 body {
     margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
+
 }
 
 /* main page styling*/
 
 .header {
-    width: 100%;
-    background-color: #00c0ff;
-    height: 4vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+    background-color: #48CAE4;
+    height: 5vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
+
+.addTodoBtn {
+    background-color: #0077B6;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.5em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.addTodoBtn:hover {
+    color:#000000;
+    background-color:#FFFFFF;
+}
+
+.addProjectBtn {
+    background-color: #0077B6;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.5em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.addProjectBtn:hover {
+    color:#000000;
+    background-color:#FFFFFF;
+}
+
+.headerTitle {
+    margin-right: auto;
+    font-size: 1.5em;
+}
+
+
 
 .container {
     display: flex; 
 
 }
 
+.containerTitle{
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1em;
+    font-weight: 900;
+}
+
 .sidebarContainer {
-    background-color: #f2f2f2;
+    background-color: #CAF0F8;
     width: 20vw;
     height: 96vh;
     border-right: #d9d9d9 solid 0.1em;
-    padding: 1em;
+    padding: 2vw;
     list-style-type: none;
 }
 
