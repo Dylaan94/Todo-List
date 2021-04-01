@@ -14,6 +14,7 @@
 - add collapsables to todo items
 - order items based on dates
 - Add colour change with project
+- Delete project functionality
 
 <b> Things I want to learn </b>
 - Best way to structure divs, and how many is too many

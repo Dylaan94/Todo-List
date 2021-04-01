@@ -1,5 +1,5 @@
 import {sortByProject} from './sortByProject'
-import {editTodoItem, rePopulateForm} from './createTodo'
+import {editTodoItem, rePopulateForm, deleteTodoItem} from './createTodo'
 import Swal from 'sweetalert2'
 
 let toDoListContainer = document.getElementById('toDoListContainer')
@@ -141,22 +141,26 @@ let renderToDoItem = (toDoListArray) => {
     // add event listeners to delete buttons
     deleteTodoBtnArr.forEach(item => {
         item.addEventListener('click', () => {
-            //window.alert('Are you sure you want to delete?')
+            let index = item.id.slice(-1) // gets array index from end of id
+
             Swal.fire({
-                title: '<strong>Delete Item?</strong>',
-                icon: 'info',
-                html:
-                  'are you sure you want to delete?',
-                showCloseButton: true,
+                title: 'Are you sure you want to delete this item?',
+                showDenyButton: true,
                 showCancelButton: true,
-                focusConfirm: false,
-                confirmButtonText:
-                  '<i class="fa fa-thumbs-up"></i> Delete',
-                confirmButtonAriaLabel: 'Thumbs up, great!',
-                cancelButtonText:
-                  '<i class="fa fa-thumbs-down"></i>Cancel',
-                cancelButtonAriaLabel: 'Thumbs down'
+                confirmButtonText: `Delete`,
+                denyButtonText: `Keep`,
+              }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                  Swal.fire('Deleted!', '', 'success')
+                  console.log('delete button pressed')
+                  deleteTodoItem(index);
+                } else if (result.isDenied) {
+                  Swal.fire('Not deleted', '', 'info')
+                  console.log('not delete button pressed')
+                }
               })
+
         })
     })
     console.log(toDoListContainer)

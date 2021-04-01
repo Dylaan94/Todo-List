@@ -45,10 +45,17 @@ let rePopulateForm = (index) => {
     document.getElementById('priority').value = toDoListArray[index].priority
 }
 
+let deleteTodoItem = (index) => {
+    toDoListArray.splice(index,1)
+    toStorage_todo(toDoListArray)
+    location.reload();
+}
+
 export {
     newTodoItem,
     toDoitem,
     editTodoItem,
-    rePopulateForm
+    rePopulateForm,
+    deleteTodoItem
 }
 
