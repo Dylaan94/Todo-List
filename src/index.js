@@ -26,6 +26,7 @@ let editBtn = document.getElementById('edit');
 let projectSubmitBtn = document.getElementById('projectSubmit')
 let closeBtn = document.getElementById('close-btn')
 let projectDropBtn = document.getElementById('projectDropBtn')
+let projectCloseBtn = document.getElementById('projectClose-btn')
 
 // event listeners
 allItemsTab.addEventListener('click', () => {
@@ -75,6 +76,10 @@ projectSubmitBtn.addEventListener('click', () => {
 })
 
 closeBtn.addEventListener('click', () => {
+    location.reload();
+})
+
+projectCloseBtn.addEventListener('click', () => {
     location.reload();
 })
 

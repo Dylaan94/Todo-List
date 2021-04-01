@@ -9,6 +9,41 @@ body {
 
 }
 
+/* Sidebar styling */
+
+.sidebarContainer {
+    background-color: #CAF0F8;
+    width: 20vw;
+    height: 96vh;
+    border-right: #d9d9d9 solid 0.1em;
+    padding-left: 2vw;
+    list-style-type: none;
+}
+
+.timeframeDivs > h2 {
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+
+.timeframeDivs > li:hover {
+    font-weight: 900;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.projectDivs > h2 {
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+
+.projectDivContainer > div:hover{
+    font-weight: 900;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
 /* main page styling*/
 
 .header {
@@ -27,7 +62,7 @@ body {
     display:inline-block;
     padding:0.35em 1.2em;
     border:0.1em solid #FFFFFF;
-    margin:0 0.3em 0.3em 0;
+    margin-right: 1em;
     border-radius:0.5em;
     box-sizing: border-box;
     text-decoration:none;
@@ -41,6 +76,7 @@ body {
 .addTodoBtn:hover {
     color:#000000;
     background-color:#FFFFFF;
+    cursor: pointer;
 }
 
 .addProjectBtn {
@@ -48,7 +84,6 @@ body {
     display:inline-block;
     padding:0.35em 1.2em;
     border:0.1em solid #FFFFFF;
-    margin:0 0.3em 0.3em 0;
     border-radius:0.5em;
     box-sizing: border-box;
     text-decoration:none;
@@ -62,6 +97,7 @@ body {
 .addProjectBtn:hover {
     color:#000000;
     background-color:#FFFFFF;
+    cursor: pointer;
 }
 
 .headerTitle {
@@ -69,16 +105,11 @@ body {
     font-size: 1.5em;
 }
 
-
-
 .container {
     display: flex; 
-
 }
 
 .containerTitle{
-    display: flex;
-    justify-content: center;
     padding-top: 1vh;
     padding-bottom: 1vh;
     font-size: 1em;
@@ -97,6 +128,28 @@ body {
     width: 60vw;
 }
 
+.clearAllBtn {
+    background-color: #FF4C4C;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #d9d9d9;
+    margin:1em;
+    border-radius:0.5em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.clearAllBtn:hover {
+    color:#000000;
+    background-color:#CAF0F8;
+    cursor: pointer;
+}
+
 
 /*To do div styling*/
 
@@ -109,10 +162,7 @@ body {
     border-bottom: #d9d9d9 solid 0.1em;
 }
 
-
-
 /* To do item styling */
-
 
 .collapsableDiv {
     display: flex;
@@ -125,6 +175,13 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     margin-right: auto;
+}
+
+.taskDiv:hover {
+    font-weight: 900;
+    font-size: 1.7em;
+    cursor: pointer;
+    transition: all 0.1s;
 }
 
 .contentDiv {
@@ -143,11 +200,10 @@ body {
 
 .editTodoBtn:hover,.deleteTodoBtn:hover {
     color: black;
+    cursor: pointer;
 }
 
 /* collapsable div styling*/
-
-
 
 /* popup form styling */
 
@@ -182,23 +238,21 @@ body {
     align-items: center;
     flex-direction: column;
     font-size: 18px;
-    
 }
 
 .popupFormTitle {
     display: flex;
     align-items: center;
-    flex-direction: row;
     justify-content: space-between;
     border-bottom: #d9d9d9 solid 1px;
-    height: 50px;
     width: 80vw;
     text-align: left;
 }
 
-.popupForm .content h1 {
-    font-size: 25px;
-    margin-bottom: 2vh;
+.popupFormTitleText {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 0.8em;
     margin-left: 1vw;
     margin-right: 1vw;
 }
@@ -284,21 +338,70 @@ body {
 .submit {
     grid-area: submit;
     height: 4vh;
+    background-color: #0077B6;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    border-radius:0.5em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.submit:hover {
+    color:#000000;
+    background-color:#CAF0F8;
+    cursor: pointer;
 }
 
 .edit {
     grid-area: edit;
     height: 4vh;
     display: none;
+    background-color: #0077B6;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    border-radius:0.5em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.edit:hover {
+    color:#000000;
+    background-color:#CAF0F8;
+    cursor: pointer;
 }
 
 .projectLabel {
     grid-area: projectLabel;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
 }
 
 .projectDropBtn {
     grid-area: projectDropBtn;
     cursor: pointer;
+    background-color: #d9d9d9;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    border-radius:0.3em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:500;
+    color:black;
+    text-align:center;
+    transition: all 0.2s;
 }
 
 .projectDropContainer {
@@ -312,11 +415,6 @@ body {
     display: none;
     position: absolute;
     z-index: 1;
-
-}
-
-.projectDropItem{
-
 }
 
 .close-btn {
@@ -329,21 +427,10 @@ body {
 
 .close-btn:hover {
     color: black;
+    cursor: pointer;
 }
 
-.submit .edit {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    border: black solid 2px;
-    border-radius: 25px;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    font-size: 20px;
-    max-width: 10vw;
-}
+
 
 .popupForm.active .overlay {
     display: block;
@@ -385,7 +472,7 @@ body {
     transform:translate(-50%,-50%) scale(0);
     background:#fff;
     width:80vw;
-    min-height:40vh;
+    min-height:30vh;
     z-index:2;
     text-align:center;
     font-family:"Open Sans",sans-serif;
@@ -393,22 +480,71 @@ body {
     padding-bottom: 1em;
 }
 
-.projectTitleLabel {
+.projectPopupTitle {
     display: flex;
-    align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
     border-bottom: #d9d9d9 solid 1px;
-    height: 50px;
-    width: 80vw;
-    text-align: left;
 }
 
-.projectPopupForm .projectFormContent h1 {
-    font-size: 25px;
-    margin-bottom: 2vh;
+.popupTitleText {
+    margin-right: auto;
     margin-left: 1vw;
+    margin-top: 1vw;
+    margin-bottom: 1vh;
+}
+
+.projectClose-btn{
+    justify-content: right;
     margin-right: 1vw;
+}
+
+.projectClose-btn:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.projectFormInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectTitleLabel {
+    justify-content: center;
+    font-size: 1.5em;
+    width: 80vw;
+    padding: 2vh;
+}
+
+.projectTitleText{
+    width: 50vw;
+    height: 3vh;
+    border: #d9d9d9 solid 1px;
+    border-radius: 3px;
+}
+
+.projectSubmit {
+    margin-top: 2vh;
+    background-color: #0077B6;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    border-radius:0.5em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.projectSubmit:hover {
+    color:#000000;
+    background-color:#CAF0F8;
+    cursor: pointer;
 }
 
 .projectPopupForm.active .overlay {
@@ -418,25 +554,4 @@ body {
 .projectPopupForm.active .projectFormContent {
     transition:all 300ms ease-in-out;
     transform:translate(-50%,-50%) scale(1);
-}
-
-/* Sidebar styling */
-
-.sidebarContainer {
-    background-color: #CAF0F8;
-    width: 20vw;
-    height: 96vh;
-    border-right: #d9d9d9 solid 0.1em;
-    padding-left: 2vw;
-    list-style-type: none;
-}
-
-.timeframeDivs > h2 {
-    padding-bottom: 1vh;
-    padding-top: 1vh;
-}
-
-.projectDivs > h2 {
-    padding-bottom: 1vh;
-    padding-top: 1vh;
 }
