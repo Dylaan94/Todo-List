@@ -6,6 +6,7 @@
 - How to add datepicker from jqueryUI
 - How to add objects to local storage
 - How to use date-fns to check date
+- How to use sweetalert
 
 <b> Things I want to add </b>
 - add ability to edit previously written todo items

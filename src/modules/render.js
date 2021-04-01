@@ -1,5 +1,6 @@
 import {sortByProject} from './sortByProject'
 import {editTodoItem, rePopulateForm} from './createTodo'
+import Swal from 'sweetalert2'
 
 let toDoListContainer = document.getElementById('toDoListContainer')
 let projectDivContainer = document.getElementById('projectDivContainer')
@@ -134,6 +135,28 @@ let renderToDoItem = (toDoListArray) => {
             console.log(index)
             rePopulateForm(index);
             toggleToDoForm_edit(index);
+        })
+    })
+
+    // add event listeners to delete buttons
+    deleteTodoBtnArr.forEach(item => {
+        item.addEventListener('click', () => {
+            //window.alert('Are you sure you want to delete?')
+            Swal.fire({
+                title: '<strong>Delete Item?</strong>',
+                icon: 'info',
+                html:
+                  'are you sure you want to delete?',
+                showCloseButton: true,
+                showCancelButton: true,
+                focusConfirm: false,
+                confirmButtonText:
+                  '<i class="fa fa-thumbs-up"></i> Delete',
+                confirmButtonAriaLabel: 'Thumbs up, great!',
+                cancelButtonText:
+                  '<i class="fa fa-thumbs-down"></i>Cancel',
+                cancelButtonAriaLabel: 'Thumbs down'
+              })
         })
     })
     console.log(toDoListContainer)
