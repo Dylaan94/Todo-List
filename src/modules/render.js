@@ -102,17 +102,18 @@ let renderToDoItem = (toDoListArray) => {
             contentDiv.appendChild(priorityDiv) 
 
             // add edit and delete buttons
-            let editTodoBtn = document.createElement('button')
+            let editTodoBtn = document.createElement('div')
             editTodoBtn.id = 'editTodoBtn' + i;
             editTodoBtn.className = 'editTodoBtn';
-            editTodoBtn.innerHTML = 'edit'
+            editTodoBtn.innerHTML = '<i class="fas fa-edit"></i>'
             editTodoBtnArr.push(editTodoBtn);
             collapsableDiv.appendChild(editTodoBtn);
+            
 
-            let deleteTodoBtn = document.createElement('button')
+            let deleteTodoBtn = document.createElement('div')
             deleteTodoBtn.id = 'deleteTodoBtn' + i;
             deleteTodoBtn.className = 'deleteTodoBtn';
-            deleteTodoBtn.innerHTML = 'delete'
+            deleteTodoBtn.innerHTML = '<i class="fas fa-trash-alt"></i>'
             deleteTodoBtnArr.push(deleteTodoBtn)
             collapsableDiv.appendChild(deleteTodoBtn)
         }

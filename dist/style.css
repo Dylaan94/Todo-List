@@ -79,24 +79,22 @@ body {
 .containerTitle{
     display: flex;
     justify-content: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     font-size: 1em;
     font-weight: 900;
 }
 
-.sidebarContainer {
-    background-color: #CAF0F8;
-    width: 20vw;
-    height: 96vh;
-    border-right: #d9d9d9 solid 0.1em;
-    padding: 2vw;
-    list-style-type: none;
-}
-
 .mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: white;
     width: 80vw;
+}
+
+.toDoListContainer {
+    width: 60vw;
 }
 
 
@@ -106,23 +104,27 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
-    width: 80vw;
+    width: 60vw;
     min-height: 5vh;
     border-bottom: #d9d9d9 solid 0.1em;
 }
 
+
+
 /* To do item styling */
+
+
+.collapsableDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 .taskDiv{
     padding: 10px;
     font-size: 1.5em;
     font-weight: bold;
-
-}
-
-.collapsableDiv {
-    display: flex;
-    align-items: center;
+    margin-right: auto;
 }
 
 .contentDiv {
@@ -131,6 +133,16 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+
+.editTodoBtn,.deleteTodoBtn {
+    color: #A9A9A9;
+    padding: 0.5vw;
+    
+}
+
+.editTodoBtn:hover,.deleteTodoBtn:hover {
+    color: black;
 }
 
 /* collapsable div styling*/
@@ -406,4 +418,25 @@ body {
 .projectPopupForm.active .projectFormContent {
     transition:all 300ms ease-in-out;
     transform:translate(-50%,-50%) scale(1);
+}
+
+/* Sidebar styling */
+
+.sidebarContainer {
+    background-color: #CAF0F8;
+    width: 20vw;
+    height: 96vh;
+    border-right: #d9d9d9 solid 0.1em;
+    padding-left: 2vw;
+    list-style-type: none;
+}
+
+.timeframeDivs > h2 {
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+
+.projectDivs > h2 {
+    padding-bottom: 1vh;
+    padding-top: 1vh;
 }
