@@ -1,5 +1,5 @@
 // sorting 
-import{checkToday, checkWeek, checkMonth} from './modules/sortByTime'
+import{checkToday, checkWeek, checkMonth, resetContainerTitle} from './modules/sortByTime'
 
 // render 
 import {toggleToDoForm, toggleProjectForm, clearNodes, toggleProjectDropdown} from './modules/render';
@@ -32,6 +32,7 @@ let projectCloseBtn = document.getElementById('projectClose-btn')
 allItemsTab.addEventListener('click', () => {
     clearNodes();
     fromStorage_todo();
+    resetContainerTitle();
 })
 
 todayTab.addEventListener('click', () => {

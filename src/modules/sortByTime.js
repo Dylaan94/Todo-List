@@ -2,6 +2,10 @@ import {isToday, isThisWeek, isThisMonth, parseISO } from 'date-fns'
 import {renderToDoItem, clearNodes} from './render'
 import {toDoListArray} from './storage'
 
+// variables 
+
+let containerTitle = document.getElementById('containerTitle')
+
 // probably a way to remove duplicate code here
 let checkToday = () => {
     let toDoListToday = [];
@@ -12,6 +16,7 @@ let checkToday = () => {
             toDoListToday.push(toDoListArray[i])
             console.log(toDoListToday);
         }
+        containerTitle.innerHTML = 'Today'
     }
         // need to remove existing divs
         clearNodes();
@@ -26,6 +31,7 @@ let checkWeek = () => {
             toDoListWeek.push(toDoListArray[i])
             console.log(toDoListWeek)
         }
+        containerTitle.innerHTML = 'This week'
     }
         clearNodes();
         renderToDoItem(toDoListWeek)
@@ -39,13 +45,19 @@ let checkMonth = () => {
             toDoListMonth.push(toDoListArray[i])
             console.log(toDoListMonth)
         }
+        containerTitle.innerHTML = 'This month'
     }
     clearNodes();
     renderToDoItem(toDoListMonth);
+}
+
+let resetContainerTitle = () => {
+    containerTitle.innerHTML = 'To Do List'
 }
 
 export {
     checkToday,
     checkWeek,
     checkMonth,
+    resetContainerTitle
 }
