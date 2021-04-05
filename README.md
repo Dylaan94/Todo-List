@@ -7,6 +7,7 @@
 - How to add objects to local storage
 - How to use date-fns to check date
 - How to use sweetalert
+- How to add form validation
 
 <b> Things I want to add </b>
 - add ability to edit previously written todo items

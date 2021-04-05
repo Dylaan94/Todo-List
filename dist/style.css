@@ -575,13 +575,12 @@ body {
 
 /* CSS for form validifcation */
 
-
 input:invalid {
     border: 2px dashed red;
   }
   
   input:invalid:required {
-    background-image: linear-gradient(to right, pink, lightgreen);
+    background-color: #f9eff0;
   }
   
   input:valid {

@@ -63,6 +63,8 @@ addProjectBtn.addEventListener('click', () => {
 })
 
 submitBtn.addEventListener('click', () => {
+    let addTodoForm = document.getElementById('addTodoForm')
+    addTodoForm.reportValidity(); // shows error message
     if (checkFormValidity()) {
         newTodoItem();
         console.log('all filled')
