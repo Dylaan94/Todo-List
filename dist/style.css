@@ -333,9 +333,14 @@ body {
 
 .priority {
     grid-area: priority;
+    display: block;
+    position: relative;
+
 }
 
 .priorityLabel {
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
     grid-area: priorityLabel
 }
 
@@ -411,7 +416,10 @@ body {
 .projectDropContainer {
     grid-area: projectDropContainer;
     position: relative;
-    display: inline-block;
+    display: none;
+    list-style-type: none;
+    background-color: #f8f9fa;
+    border-radius: 5px;
 }
 
 .projectDropDivs {
@@ -419,6 +427,11 @@ body {
     display: none;
     position: absolute;
     z-index: 1;
+}
+
+.projectDropDivs li:hover {
+    background-color: #CAF0F8;
+    cursor: pointer;
 }
 
 .close-btn {

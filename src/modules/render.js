@@ -242,10 +242,14 @@ let renderProjectDrop = (projectArray) => {
 
 let toggleProjectDropdown = () => {
     let projectDropDivs = document.getElementById('projectDropDivs')
+    let projectDropContainer = document.getElementById('projectDropContainer')
     if (projectDropDivs.style.display == 'block') {
         projectDropDivs.style.display = 'none'
+        projectDropContainer.style.display = 'none'
+        
     } else {
         projectDropDivs.style.display = 'block'
+        projectDropContainer.style.display = 'block'
     }
     // add transition
     if (projectDropDivs.style.maxHeight) {

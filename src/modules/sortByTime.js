@@ -31,7 +31,7 @@ let checkWeek = () => {
             toDoListWeek.push(toDoListArray[i])
             console.log(toDoListWeek)
         }
-        containerTitle.innerHTML = 'This week'
+        containerTitle.innerHTML = 'This Week'
     }
         clearNodes();
         renderToDoItem(toDoListWeek)
@@ -45,7 +45,7 @@ let checkMonth = () => {
             toDoListMonth.push(toDoListArray[i])
             console.log(toDoListMonth)
         }
-        containerTitle.innerHTML = 'This month'
+        containerTitle.innerHTML = 'This Month'
     }
     clearNodes();
     renderToDoItem(toDoListMonth);

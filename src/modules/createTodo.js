@@ -17,7 +17,12 @@ let newTodoItem = () => {
     let description = document.getElementById('description').value;
     let notes = document.getElementById('notes').value;
     let project = document.getElementById('projectDropBtn').innerHTML;
-    let priority = document.getElementById('priority').value;
+    let priority = document.getElementById('priority')
+    if (priority.checked === true) {
+        priority = "High"
+    } else {
+        priority = "Low"
+    }
     toDoitem(task, dueDate, description, notes, project, priority)
 }
 
