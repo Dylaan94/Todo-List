@@ -246,7 +246,6 @@ let toggleProjectDropdown = () => {
     if (projectDropDivs.style.display == 'block') {
         projectDropDivs.style.display = 'none'
         projectDropContainer.style.display = 'none'
-        
     } else {
         projectDropDivs.style.display = 'block'
         projectDropContainer.style.display = 'block'

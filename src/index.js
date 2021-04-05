@@ -11,6 +11,9 @@ import {newProject} from './modules/createProject'
 // storage
 import {fromStorage_todo, fromStorage_project, clearStorage, loadDefaultProject} from './modules/storage'
 
+// form validation
+import {checkFormValidity} from './modules/forms'
+
 // tabbing variables
 let allItemsTab = document.getElementById('allItemsTab');
 let todayTab = document.getElementById('todayTab')
@@ -60,8 +63,13 @@ addProjectBtn.addEventListener('click', () => {
 })
 
 submitBtn.addEventListener('click', () => {
-    newTodoItem();
-    location.reload(); 
+    if (checkFormValidity()) {
+        newTodoItem();
+        console.log('all filled')
+        location.reload();
+    } else {
+        console.log('not filled')
+    }
 })
 
 editBtn.addEventListener('click', () => {

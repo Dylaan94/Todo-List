@@ -572,3 +572,18 @@ body {
     transition:all 300ms ease-in-out;
     transform:translate(-50%,-50%) scale(1);
 }
+
+/* CSS for form validifcation */
+
+
+input:invalid {
+    border: 2px dashed red;
+  }
+  
+  input:invalid:required {
+    background-image: linear-gradient(to right, pink, lightgreen);
+  }
+  
+  input:valid {
+    border: 2px solid black;
+  }

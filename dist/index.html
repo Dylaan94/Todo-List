@@ -60,27 +60,30 @@
                         </div>
                         <div class = "close-btn" id = "close-btn">x</div>
                     </div>
+                    <!-- Look at how to add <form> -->
+                    <form>
                     <div class = "formInput">
                         <label for = "task" class = "taskLabel"> Title: </label>
-                        <input type = "text" id = "task" class = "task" name = "task">
+                        <input type = "text" id = "task" class = "task" name = "task" required>
                         <label for = "dueDate" class = "dueDateLabel"> Due Date: </label>
-                        <input type = "text" id = "datepicker" class = "datepicker" name = "dueDate">
+                        <input type = "text" id = "datepicker" class = "datepicker" name = "dueDate" required>
                         <label for = "description" class = "descriptionLabel"> Description: </label>
-                        <input type = "text" id = "description" class = "description" name = "description">
+                        <input type = "text" id = "description" class = "description" name = "description" required>
                         <label for = "notes" class = "notesLabel"> Notes: </label>
-                        <input type = "text" id = "notes" class = "notes" name = "notes">
+                        <input type = "text" id = "notes" class = "notes" name = "notes" required>
                         <label for = "project" class = "projectLabel"> Project:</label>
-                        <button class = "projectDropBtn" id = "projectDropBtn"> choose project </button>
+                        <div class = "projectDropBtn" id = "projectDropBtn"> choose project </div>
                         <div class = "projectDropContainer" id = "projectDropContainer">
                             <div class = "projectDropDivs" id = "projectDropDivs">
                                 <!-- dropdown items will be dynamically added -->
                         </div>
                         </div>
-                        <label for = "priority" class = "priorityLabel"> high priority? </label>
-                        <input type = "checkbox" id = "priority" class = "priority" value = "priority">
-                        <button class = "submit" id = "submit" class = "submit"> submit </button>
-                        <button class = "edit" id = "edit" class = "edit">edit</button>
+                        <label for = "priority" class = "priorityLabel"> high priority? </label >
+                        <input type = "checkbox" id = "priority" class = "priority" value = "priority" >
+                        <button type = "button" class = "submit" id = "submit" class = "submit"> submit </button>
+                        <button type = "button" class = "edit" id = "edit" class = "edit">edit</button>
                     </div>
+                </form>
                 </div>
             </div>
         </div>
