@@ -80,25 +80,25 @@ let renderToDoItem = (toDoListArray) => {
             let descriptionDiv = document.createElement('div');
             descriptionDiv.id = 'descriptionDiv' + i;
             descriptionDiv.className = 'descriptionDiv';
-            descriptionDiv.innerHTML = toDoListArray[i].description;
+            descriptionDiv.innerHTML = '<b>Description: </b>' + toDoListArray[i].description;
             contentDiv.appendChild(descriptionDiv)
         
             let notesDiv = document.createElement('div');
             notesDiv.id = 'notesDiv' + i;
             notesDiv.className = 'notesDiv';
-            notesDiv.innerHTML = toDoListArray[i].notes;
+            notesDiv.innerHTML = '<b>Notes: </b>' + toDoListArray[i].notes;
             contentDiv.appendChild(notesDiv)
 
             let projectDivText = document.createElement('div');
             projectDivText.id = 'projectDivText' + i;
             projectDivText.className = 'projectDivText'
-            projectDivText.innerHTML = toDoListArray[i].project
+            projectDivText.innerHTML = '<b>Project: </b>' + toDoListArray[i].project
             contentDiv.appendChild(projectDivText)
         
             let priorityDiv = document.createElement('div');
             priorityDiv.id = 'priorityDiv' + i;
             priorityDiv.className = 'priorityDiv'
-            priorityDiv.innerHTML = toDoListArray[i].priority;
+            priorityDiv.innerHTML = '<b>Priority: </b>'+ toDoListArray[i].priority;
             contentDiv.appendChild(priorityDiv) 
 
             // add edit and delete buttons

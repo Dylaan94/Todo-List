@@ -185,11 +185,15 @@ body {
 }
 
 .contentDiv {
-    padding: 1em;
     display: none;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    padding-bottom: 1em;
+}
+
+.contentDiv b {
+    font-size: 1.1em;
 }
 
 .editTodoBtn,.deleteTodoBtn {

@@ -15,6 +15,7 @@
 - order items based on dates
 - Add colour change with project
 - Delete project functionality
+- Add animations to all pop ups
 
 <b> Things I want to learn </b>
 - Best way to structure divs, and how many is too many
