@@ -1,30 +1,30 @@
-import {isToday, isThisWeek, isThisMonth, parseISO } from 'date-fns'
-import {renderToDoItem, clearNodes} from './render'
-import {toDoListArray} from './storage'
+import { isToday, isThisWeek, isThisMonth, parseISO } from 'date-fns'
+import { renderToDoItem, clearNodes } from './render'
+import { toDoListArray } from './storage'
 
-// variables 
+// variables
 
 let containerTitle = document.getElementById('containerTitle')
 
 // probably a way to remove duplicate code here
 let checkToday = () => {
-    let toDoListToday = [];
+    let toDoListToday = []
     console.log('checkTodayRunning')
     for (let i = 0; i < toDoListArray.length; i++) {
         // uses parseISO so that isToday can be run
-        if (isToday(parseISO(toDoListArray[i].dueDate)) == true){
+        if (isToday(parseISO(toDoListArray[i].dueDate)) == true) {
             toDoListToday.push(toDoListArray[i])
-            console.log(toDoListToday);
+            console.log(toDoListToday)
         }
         containerTitle.innerHTML = 'Today'
     }
-        // need to remove existing divs
-        clearNodes();
-        renderToDoItem(toDoListToday)
+    // need to remove existing divs
+    clearNodes()
+    renderToDoItem(toDoListToday)
 }
 
 let checkWeek = () => {
-    let toDoListWeek = [];
+    let toDoListWeek = []
     console.log('checkWeekRunning')
     for (let i = 0; i < toDoListArray.length; i++) {
         if (isThisWeek(parseISO(toDoListArray[i].dueDate)) == true) {
@@ -33,31 +33,26 @@ let checkWeek = () => {
         }
         containerTitle.innerHTML = 'This Week'
     }
-        clearNodes();
-        renderToDoItem(toDoListWeek)
+    clearNodes()
+    renderToDoItem(toDoListWeek)
 }
 
 let checkMonth = () => {
-    let toDoListMonth = [];
+    let toDoListMonth = []
     console.log('checkMonthRunning')
-    for (let i = 0; i < toDoListArray.length; i++){
-        if(isThisMonth(parseISO(toDoListArray[i].dueDate)) == true) {
+    for (let i = 0; i < toDoListArray.length; i++) {
+        if (isThisMonth(parseISO(toDoListArray[i].dueDate)) == true) {
             toDoListMonth.push(toDoListArray[i])
             console.log(toDoListMonth)
         }
         containerTitle.innerHTML = 'This Month'
     }
-    clearNodes();
-    renderToDoItem(toDoListMonth);
+    clearNodes()
+    renderToDoItem(toDoListMonth)
 }
 
 let resetContainerTitle = () => {
     containerTitle.innerHTML = 'To Do List'
 }
 
-export {
-    checkToday,
-    checkWeek,
-    checkMonth,
-    resetContainerTitle
-}
+export { checkToday, checkWeek, checkMonth, resetContainerTitle }

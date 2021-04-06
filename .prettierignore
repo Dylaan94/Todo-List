@@ -1,0 +1,10 @@
+# Ignore all HTML files:
+*.html
+*.css
+
+{
+  "editor.defaultFormatter": null,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
