@@ -1,5 +1,5 @@
 # Todo-List
-##Todo List for the Odin Project##
+## Todo List for the Odin Project ##
 
 ### Things I have learnt ###
 - How to run functions from within seperate modules
