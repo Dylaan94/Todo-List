@@ -3,7 +3,6 @@ import { renderToDoItem, clearNodes } from './render'
 import { toDoListArray } from './storage'
 
 // variables
-
 let containerTitle = document.getElementById('containerTitle')
 
 // probably a way to remove duplicate code here
