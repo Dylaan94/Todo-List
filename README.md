@@ -1,6 +1,8 @@
 # Todo-List
 # Todo List for the Odin Project #
 
+[Click Here for live demo] (https://dylaan94.github.io/Todo-List/dist/index.html)
+
 ## Main features ##
 * Add, edit, delete todo items
 * Sort by day, week, month and project
